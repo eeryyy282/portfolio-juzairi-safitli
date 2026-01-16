@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juzairi Safitli | Android & AI Engineer</title>
@@ -8,14 +9,285 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body></body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo"><span>JuzairiSafitli</span>.DEV</div>
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav.status">STATUS</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+                <li><a href="#experience" data-i18n="nav.quests">QUESTS</a></li>
+                <li><a href="#projects" data-i18n="nav.missions">MISSIONS</a></li>
+            </ul>
+            <div class="lang-switch">
+                <span class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</span>
+                <span class="lang-separator">/</span>
+                <span class="lang-btn active" onclick="setLanguage('id')" id="btn-id">ID</span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h3 style="color: var(--accent); letter-spacing: 5px; margin-bottom: 10px" data-i18n="hero.systemStart">
+                SYSTEM START
+            </h3>
+            <h1 class="glitch" data-text="MUHAMMAD JUZAIRI">MUHAMMAD JUZAIRI</h1>
+            <div class="typewriter" id="typing-text"></div>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <span class="stat-value">3.95</span>
+                    <span class="stat-label" data-i18n="hero.gpa">GPA LEVEL</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">DISTINCTION</span>
+                    <span class="stat-label" data-i18n="hero.rank">RANK</span>
+                </div>
+            </div>
+            <div style="margin-top: 40px">
+                <a href="#projects" class="btn-game" data-i18n="hero.btn">VIEW PROJECTS</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">PLAYER PROFILE</h2>
+            <div class="profile-card">
+                <div class="profile-img-box">
+                    <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Juzairi&backgroundColor=b6e3f4"
+                        alt="Avatar Muhammad Juzairi" class="profile-img" />
+                </div>
+                <div class="profile-info">
+                    <h3 data-i18n="about.charInfo">CHARACTER INFO</h3>
+                    <div class="profile-details">
+                        <p>
+                            <i class="fas fa-user-astronaut"></i>
+                            <strong data-i18n="about.classLabel">Class:</strong>
+                            <span data-i18n="about.classVal">Android & AI Engineer</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <strong data-i18n="about.baseLabel">Base:</strong> Jambi,
+                            Indonesia
+                        </p>
+                        <p>
+                            <i class="fas fa-graduation-cap"></i>
+                            <strong data-i18n="about.eduLabel">Education:</strong>
+                            <span data-i18n="about.eduVal">Universitas Nurdin Hamzah (Best Graduate)</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <strong>Email:</strong> airiagustus82@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="profile-bio">
+                    <h3 data-i18n="about.bioTitle">BIO</h3>
+                    <p data-i18n="about.bioDesc">
+                        Lulusan Sistem Informasi terbaik dengan fokus pada Android
+                        Development (Kotlin) dan Integrasi AI. Memiliki rekam jejak yang
+                        terbukti dalam manajemen laboratorium dan proyek pendidikan.
+                        Disiplin tinggi, pembelajar cepat, dan siap berkontribusi dalam
+                        tim teknologi yang dinamis.
+                    </p>
+                    <br />
+                    <p style="color: var(--primary)">
+                        <i>"<span data-i18n="about.quote">Achievement Unlocked: Best Graduate & Bangkit Distinction
+                                Graduate</span>"</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title" data-i18n="skills.title">SKILL TREE</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 data-i18n="skills.mobile">MOBILE ENG</h3>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>Android SDK / Kotlin</span> <span>90%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>Clean Architecture / Koin</span> <span>85%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-i18n="skills.backend">BACKEND & AI</h3>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>Node.js / Express</span> <span>80%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>Google Gemini AI Integration</span> <span>85%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>SQL / Database Mgmt</span> <span>80%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title" data-i18n="exp.title">QUEST LOG</h2>
+            <div class="timeline">
+                <div class="exp-item left">
+                    <div class="exp-content">
+                        <div class="exp-role" data-i18n="exp.role1">Teacher & Mentor</div>
+                        <div class="exp-company">Timedoor Academy</div>
+                        <div class="exp-date">Sep 2024 - Sep 2025</div>
+                        <p data-i18n="exp.desc1">
+                            Mengajar logika pemrograman (Roblox, Python) kepada siswa.
+                            Membimbing 20+ siswa menyelesaikan proyek kompleks dengan rating
+                            kepuasan 93%.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-item right">
+                    <div class="exp-content">
+                        <div class="exp-role" data-i18n="exp.role2">
+                            Laboratory Assistant
+                        </div>
+                        <div class="exp-company">Universitas Nurdin Hamzah</div>
+                        <div class="exp-date">Aug 2023 - Oct 2023</div>
+                        <p data-i18n="exp.desc2">
+                            Mengelola maintenance hardware dan infrastruktur jaringan lab
+                            komputer untuk memastikan zero downtime saat ujian.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-item left">
+                    <div class="exp-content">
+                        <div class="exp-role" data-i18n="exp.role3">
+                            Teacher (Kampus Merdeka)
+                        </div>
+                        <div class="exp-company">Program Kampus Mengajar</div>
+                        <div class="exp-date">Feb 2023 - Jun 2023</div>
+                        <p data-i18n="exp.desc3">
+                            Mengintegrasikan teknologi ke dalam kurikulum, menghasilkan
+                            peningkatan 10% dalam literasi siswa dan merevitalisasi
+                            perpustakaan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">
+                COMPLETED MISSIONS
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-header">
+                        <h4>Double A Calorie (A2Bot)</h4>
+                        <span class="tech-tag">AI / Node.js</span>
+                    </div>
+                    <div class="card-body">
+                        <p data-i18n="projects.desc1">
+                            Asisten WhatsApp bertenaga AI untuk pelacakan kalori otomatis.
+                            Mengintegrasikan <strong>Google Gemini 2.5 Flash</strong> untuk
+                            mengenali makanan dari input teks kasual.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <h4>Virtual Class App</h4>
+                        <span class="tech-tag">Android / MVVM</span>
+                    </div>
+                    <div class="card-body">
+                        <p data-i18n="projects.desc2">
+                            Aplikasi akademik komprehensif untuk UNH. Fitur: Absensi
+                            Otomatis Real-time, manajemen tugas, dan jadwal offline-capable.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                            <a href="#" title="View Details"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <h4>Valorant Agent Android</h4>
+                        <span class="tech-tag">Clean Arch / Kotlin</span>
+                    </div>
+                    <div class="card-body">
+                        <p data-i18n="projects.desc3">
+                            Aplikasi performa tinggi dengan Clean Architecture dan
+                            Modularization. Integrasi MapBox, Lottie, dan Firebase
+                            Crashlytics.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                            <a href="#" title="View Details"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="mailto:airiagustus82@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p style="color: #666; font-size: 0.8rem">
+                © 2026 MUHAMMAD JUZAIRI SAFITLI. SYSTEM STATUS: ONLINE.<br />
+                BUILT WITH PURE HTML/CSS/JS.
+            </p>
+        </div>
+    </footer>
+</body>
+
 </html>
