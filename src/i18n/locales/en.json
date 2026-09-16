@@ -19,10 +19,10 @@
   },
   "about": {
     "section_badge": "About Me",
-    "title": "Engineering with precision, curiosity, and solid foundations.",
-    "p1": "I am a Software Engineer and Mobile Developer with a strong academic foundation (graduating with a 3.95 GPA as the Best Graduate in Information Systems) and proven hands-on experience in building scalable Android and full-stack solutions.",
-    "p2": "My journey includes completing the prestigious Bangkit Academy (led by Google, GoTo, and Traveloka) with Distinction in Mobile Development. I focus on clean architecture, performance optimization, and integrating AI capabilities—such as Google Gemini—into practical, impactful real-world applications.",
-    "p3": "Whether architecting native Kotlin Android applications with MVVM or building high-efficiency web applications, I bring disciplined engineering practices, proactive problem-solving, and a dedication to high standards.",
+    "title": "Building functional, well-structured software solutions that make a real impact.",
+    "p1": "I am a Software Engineer and Mobile Developer with a focus on building Android applications and full-stack web solutions. During my Information Systems studies, I graduated as the Best Graduate with a 3.95 GPA, which gave me a strong foundation in understanding software engineering deeply.",
+    "p2": "My professional journey expanded after graduating from the Bangkit Academy program (led by Google, GoTo, and Traveloka) in the Mobile Development learning path with a Distinction predicate. Currently, I am highly interested in implementing Clean Architecture, optimizing system performance, and exploring how artificial intelligence, like Google Gemini, can be integrated into applications to solve everyday problems.",
+    "p3": "For me, writing code is not just about making an application run, but also about discipline, proactive problem-solving, and maintaining high quality standards. I apply this mindset whether I am architecting native Android apps with Kotlin and MVVM or building efficient web systems.",
     "stat_experience": "Years Experience",
     "stat_projects": "Completed Projects",
     "stat_gpa": "GPA",
@@ -31,38 +31,53 @@
   "experience": {
     "section_badge": "Career History",
     "title": "Work Experience",
-    "subtitle": "Professional roles driving IT infrastructure, programming education, and systems management.",
+    "subtitle": "My career journey in managing IT infrastructure, teaching programming, and developing systems.",
     "items": [
       {
         "role": "IT Intern / Asisten Pranata Komputer",
         "company": "BPS Kota Jambi (Badan Pusat Statistik)",
         "period": "Aug 2026 - Present",
         "type": "Internship",
-        "description": "Providing technical IT infrastructure support, data processing assistance, and comprehensive system documentation to optimize statistical operations and regional workflows.",
-        "skills": ["IT Infrastructure", "System Documentation", "Data Support", "Network Operations"]
+        "description": "Currently, I am responsible for providing technical support for IT infrastructure, assisting with statistical data processing, and compiling comprehensive system documentation. My goal is to ensure smooth operations and workflows within the regional statistical office.",
+        "skills": [
+          "IT Infrastructure",
+          "System Documentation",
+          "Data Support",
+          "Network Operations"
+        ]
       },
       {
         "role": "Programming Teacher",
         "company": "Timedoor Academy",
         "period": "Sep 2024 - Sep 2025",
         "type": "Full-time / Instructor",
-        "description": "Achieved a 93% student & parent satisfaction rate while mentoring 20+ students in computational thinking, programming logic, algorithms, and software development fundamentals.",
-        "skills": ["Algorithms", "Programming Logic", "Mentorship", "Curriculum Delivery"]
+        "description": "While teaching, I mentored over 20 students in understanding programming logic, algorithms, and software development fundamentals. I am proud to have achieved a 93% student and parent satisfaction rate through a structured and engaging learning approach.",
+        "skills": [
+          "Algorithms",
+          "Programming Logic",
+          "Mentorship",
+          "Curriculum Delivery"
+        ]
       },
       {
         "role": "Laboratory Assistant",
         "company": "LPTIK Universitas Nurdin Hamzah",
         "period": "Aug 2023 - Oct 2023",
         "type": "Academic Assistant",
-        "description": "Managed university computer laboratory infrastructure ensuring zero-downtime during practical sessions, supervised technical assessments, and assisted lecturers in system configuration.",
-        "skills": ["Hardware & Network", "Zero-Downtime Management", "Linux/Windows Config", "Student Mentoring"]
+        "description": "I managed the university's computer laboratory infrastructure, ensuring zero downtime during practical sessions. Additionally, I assisted lecturers with system configurations and supervised technical examinations.",
+        "skills": [
+          "Hardware & Network",
+          "Zero-Downtime Management",
+          "Linux/Windows Config",
+          "Student Mentoring"
+        ]
       }
     ]
   },
   "projects": {
     "section_badge": "Featured Work",
     "title": "Selected Projects",
-    "subtitle": "A collection of software engineering projects spanning AI integrations, native Android, and automated web tools.",
+    "subtitle": "A selection of my software engineering projects, ranging from AI integrations and native Android apps to web-based document automation systems.",
     "view_repo": "View Repository",
     "view_live": "Live Demo",
     "items": [
@@ -70,8 +85,15 @@
         "id": "bast-v2",
         "title": "BAST V2",
         "category": "Full-stack Web App",
-        "description": "An automated document generation platform that streamlines official handover documentation (BAST). It parses Excel spreadsheets and dynamically produces standard formatted Word documents, cutting manual drafting time drastically.",
-        "tech": ["Vite", "React", "Node.js", "Express", "Tailwind CSS", "Docx Automation"],
+        "description": "A web platform designed to automate the creation of official handover documents (BAST). This system processes data from Excel spreadsheets and dynamically generates officially formatted Word documents, significantly saving time on manual drafting.",
+        "tech": [
+          "Vite",
+          "React",
+          "Node.js",
+          "Express",
+          "Tailwind CSS",
+          "Docx Automation"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -79,8 +101,14 @@
         "id": "a2bot",
         "title": "Double A Calorie (A2Bot)",
         "category": "AI WhatsApp Bot",
-        "description": "An intelligent conversational WhatsApp bot integrated with Google Gemini 1.5. Users send meal photos or descriptions, and the bot analyzes nutritional content, estimates calories, and delivers personalized dietary feedback in real-time.",
-        "tech": ["Google Gemini 1.5", "Node.js", "WhatsApp API", "Multimodal AI", "TypeScript"],
+        "description": "A smart WhatsApp bot that I integrated with Google Gemini 1.5. Users can simply send a photo or description of their food, and the bot will analyze the nutritional content, estimate calories, and provide dietary advice in real-time.",
+        "tech": [
+          "Google Gemini 1.5",
+          "Node.js",
+          "WhatsApp API",
+          "Multimodal AI",
+          "TypeScript"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -88,8 +116,15 @@
         "id": "virtual-class",
         "title": "Virtual Class App",
         "category": "Native Android",
-        "description": "A robust native Android application engineered with Kotlin, MVVM Clean Architecture, and Room database. Features real-time attendance verification, course material distribution, and offline synchronization capabilities.",
-        "tech": ["Kotlin", "Android Jetpack", "MVVM", "Room DB", "Coroutines", "Retrofit"],
+        "description": "A native Android application I developed using Kotlin, Clean Architecture (MVVM), and Room database. It is built to be robust, featuring real-time attendance verification, course material distribution, and offline data synchronization capabilities.",
+        "tech": [
+          "Kotlin",
+          "Android Jetpack",
+          "MVVM",
+          "Room DB",
+          "Coroutines",
+          "Retrofit"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -97,8 +132,14 @@
         "id": "valorant-agent",
         "title": "Valorant Agent Explorer",
         "category": "Native Android App",
-        "description": "A modular Android application exploring game agents, abilities, and weapons. Built with Clean Architecture, multi-module setup, automated CI/CD pipeline, and fluid responsive UI layouts.",
-        "tech": ["Kotlin", "Clean Architecture", "Modular", "GitHub Actions CI/CD", "REST API"],
+        "description": "An exploration app for Valorant agents, abilities, and weapons. I designed it using Clean Architecture, a multi-module structure, automated CI/CD integration with GitHub Actions, and a responsive user interface layout.",
+        "tech": [
+          "Kotlin",
+          "Clean Architecture",
+          "Modular",
+          "GitHub Actions CI/CD",
+          "REST API"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": false
       }
@@ -107,7 +148,7 @@
   "education": {
     "section_badge": "Academic & Certifications",
     "title": "Education & Honors",
-    "subtitle": "Formal university degree, distinguished cohort training, and industry certifications.",
+    "subtitle": "My formal educational background, intensive training programs, and professional certifications.",
     "degrees_title": "Formal Education",
     "degrees": [
       {
@@ -115,14 +156,14 @@
         "institution": "Universitas Nurdin Hamzah",
         "period": "2020 - 2024",
         "honors": "Best Graduate • GPA 3.95 / 4.00",
-        "description": "Graduated as the top-ranking student across the faculty. Focused on software engineering, database design, and enterprise information systems."
+        "description": "Completed my studies and achieved the title of best graduate at the faculty level. During my university years, I focused heavily on software engineering, database design, and enterprise information systems development."
       },
       {
         "degree": "Mobile Development Cohort",
         "institution": "Bangkit Academy (Google, GoTo, Traveloka)",
         "period": "2023",
         "honors": "Distinction Graduate (Top Performers)",
-        "description": "Intensive mobile engineering program mastering native Android development, Clean Architecture, Kotlin coroutines, and Google Cloud integration."
+        "description": "Graduated with a Distinction predicate in this intensive mobile engineering program. Here, I deeply studied advanced Android development, Clean Architecture implementation, Kotlin coroutines, and Google Cloud integrations."
       }
     ],
     "certifications_title": "Professional Certifications",
@@ -147,7 +188,7 @@
   "contact": {
     "section_badge": "Get In Touch",
     "title": "Let's collaborate on your next project.",
-    "subtitle": "Whether you have an inquiry for software engineering, mobile development, or an interesting opportunity, feel free to reach out directly.",
+    "subtitle": "If you have any questions about software development, mobile application engineering, or any interesting collaboration opportunities, please feel free to reach out to me.",
     "email_label": "Email Address",
     "location_label": "Location",
     "location_value": "Jambi, Indonesia",
@@ -160,4 +201,3 @@
     "designed_with": "Engineered with React, Vite & Tailwind CSS."
   }
 }
-

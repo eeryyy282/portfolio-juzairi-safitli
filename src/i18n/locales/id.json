@@ -19,10 +19,10 @@
   },
   "about": {
     "section_badge": "Tentang Saya",
-    "title": "Membangun solusi perangkat lunak dengan presisi, rasa ingin tahu, dan fondasi yang kuat.",
-    "p1": "Saya adalah seorang Software Engineer dan Mobile Developer dengan fondasi akademik yang kokoh (lulus dengan IPK 3.95 sebagai Lulusan Terbaik Program Studi Sistem Informasi) serta pengalaman teruji dalam membangun solusi Android dan aplikasi web full-stack yang skalabel.",
-    "p2": "Perjalanan profesional saya mencakup kelulusan dengan predikat Distinction pada Bangkit Academy (dipimpin oleh Google, GoTo, dan Traveloka) di alur Mobile Development. Saya berfokus pada arsitektur perangkat lunak yang bersih (Clean Architecture), optimasi performa, serta integrasi teknologi kecerdasan buatan seperti Google Gemini ke dalam aplikasi nyata.",
-    "p3": "Baik dalam merancang aplikasi native Android berbasis Kotlin dengan pola MVVM maupun membangun aplikasi web berefisiensi tinggi, saya selalu mengedepankan praktik rekayasa perangkat lunak yang disiplin, pemecahan masalah yang proaktif, dan standar kualitas tinggi.",
+    "title": "Membangun solusi perangkat lunak yang fungsional, terstruktur, dan memberikan dampak nyata.",
+    "p1": "Saya adalah seorang Software Engineer dan Mobile Developer yang berfokus pada pembuatan aplikasi Android dan web full-stack. Selama menempuh pendidikan Sistem Informasi, saya berhasil lulus sebagai Lulusan Terbaik dengan IPK 3.95, yang menjadi fondasi kuat saya dalam memahami rekayasa perangkat lunak secara mendalam.",
+    "p2": "Pengalaman saya semakin berkembang setelah lulus dari program Bangkit Academy (oleh Google, GoTo, dan Traveloka) di jalur Mobile Development dengan predikat Distinction. Saat ini, saya sangat tertarik dengan penerapan Clean Architecture, optimasi performa sistem, serta mengeksplorasi bagaimana kecerdasan buatan, seperti Google Gemini, dapat diintegrasikan ke dalam aplikasi untuk memecahkan masalah sehari-hari.",
+    "p3": "Bagi saya, menulis kode bukan hanya soal membuat aplikasi yang berjalan, tetapi juga soal kedisiplinan, pemecahan masalah yang proaktif, dan menjaga standar kualitas. Pendekatan ini selalu saya terapkan, baik saat merancang aplikasi Android native dengan Kotlin dan MVVM maupun saat membangun sistem web yang efisien.",
     "stat_experience": "Tahun Pengalaman",
     "stat_projects": "Proyek Selesai",
     "stat_gpa": "IPK Kelulusan",
@@ -31,38 +31,53 @@
   "experience": {
     "section_badge": "Riwayat Karir",
     "title": "Pengalaman Kerja",
-    "subtitle": "Peran profesional dalam mengelola infrastruktur IT, pengajaran pemrograman, dan manajemen sistem.",
+    "subtitle": "Perjalanan karir saya dalam mengelola infrastruktur IT, mengajar pemrograman, dan mengembangkan sistem.",
     "items": [
       {
         "role": "Magang IT / Asisten Pranata Komputer",
         "company": "BPS Kota Jambi (Badan Pusat Statistik)",
         "period": "Agu 2026 - Sekarang",
         "type": "Magang",
-        "description": "Menyediakan dukungan infrastruktur IT teknis, bantuan pengolahan data statistik, serta dokumentasi sistem secara komprehensif guna mengoptimalkan operasional dan alur kerja regional.",
-        "skills": ["Infrastruktur IT", "Dokumentasi Sistem", "Pengolahan Data", "Operasional Jaringan"]
+        "description": "Saat ini saya bertanggung jawab dalam memberikan dukungan teknis untuk infrastruktur IT, membantu pengolahan data statistik, serta menyusun dokumentasi sistem yang komprehensif. Tujuannya adalah untuk memastikan kelancaran operasional dan alur kerja di lingkungan badan pusat statistik regional.",
+        "skills": [
+          "Infrastruktur IT",
+          "Dokumentasi Sistem",
+          "Pengolahan Data",
+          "Operasional Jaringan"
+        ]
       },
       {
         "role": "Guru Pemrograman",
         "company": "Timedoor Academy",
         "period": "Sep 2024 - Sep 2025",
         "type": "Penuh Waktu / Pengajar",
-        "description": "Meraih tingkat kepuasan siswa & orang tua sebesar 93% sembari membimbing 20+ siswa dalam penalaran komputasional, logika pemrograman, algoritma, serta dasar-dasar rekayasa perangkat lunak.",
-        "skills": ["Algoritma", "Logika Pemrograman", "Mentoring", "Penyampaian Kurikulum"]
+        "description": "Selama mengajar, saya membimbing lebih dari 20 siswa untuk memahami logika pemrograman, algoritma, dan dasar-dasar pengembangan perangkat lunak. Saya bangga bisa mencapai tingkat kepuasan siswa dan orang tua sebesar 93% melalui pendekatan belajar yang terstruktur dan menyenangkan.",
+        "skills": [
+          "Algoritma",
+          "Logika Pemrograman",
+          "Mentoring",
+          "Penyampaian Kurikulum"
+        ]
       },
       {
         "role": "Asisten Laboratorium",
         "company": "LPTIK Universitas Nurdin Hamzah",
         "period": "Agu 2023 - Okt 2023",
         "type": "Asisten Akademik",
-        "description": "Mengelola infrastruktur laboratorium komputer universitas dengan memastikan zero-downtime selama sesi praktikum, mengawasi ujian teknis, serta membantu dosen dalam konfigurasi sistem.",
-        "skills": ["Hardware & Jaringan", "Zero-Downtime Management", "Konfigurasi Linux/Windows", "Bimbingan Mahasiswa"]
+        "description": "Saya bertugas mengelola infrastruktur laboratorium komputer universitas, memastikan tidak ada gangguan atau downtime selama sesi praktikum berlangsung. Selain itu, saya juga membantu dosen dalam konfigurasi sistem dan mengawasi jalannya ujian teknis.",
+        "skills": [
+          "Hardware & Jaringan",
+          "Zero-Downtime Management",
+          "Konfigurasi Linux/Windows",
+          "Bimbingan Mahasiswa"
+        ]
       }
     ]
   },
   "projects": {
     "section_badge": "Karya Unggulan",
     "title": "Proyek Pilihan",
-    "subtitle": "Koleksi proyek rekayasa perangkat lunak mulai dari integrasi AI multimodal, aplikasi native Android, hingga otomasi web.",
+    "subtitle": "Beberapa proyek rekayasa perangkat lunak yang pernah saya kerjakan, mulai dari integrasi AI, aplikasi Android native, hingga sistem otomasi dokumen web.",
     "view_repo": "Lihat Repositori",
     "view_live": "Demo Langsung",
     "items": [
@@ -70,8 +85,15 @@
         "id": "bast-v2",
         "title": "BAST V2",
         "category": "Aplikasi Web Full-stack",
-        "description": "Platform otomasi dokumen Berita Acara Serah Terima (BAST). Sistem ini memproses spreadsheet Excel dan secara dinamis menghasilkan dokumen Word berformat baku resmi, memangkas waktu pembuatan dokumen manual secara drastis.",
-        "tech": ["Vite", "React", "Node.js", "Express", "Tailwind CSS", "Otomasi Dokumen"],
+        "description": "Sebuah platform web untuk mengotomatisasi pembuatan Berita Acara Serah Terima (BAST). Sistem ini memproses data dari spreadsheet Excel dan secara dinamis mengubahnya menjadi dokumen Word dengan format resmi, sehingga sangat menghemat waktu pengerjaan manual.",
+        "tech": [
+          "Vite",
+          "React",
+          "Node.js",
+          "Express",
+          "Tailwind CSS",
+          "Otomasi Dokumen"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -79,8 +101,14 @@
         "id": "a2bot",
         "title": "Double A Calorie (A2Bot)",
         "category": "Bot WhatsApp Berbasis AI",
-        "description": "Bot WhatsApp cerdas yang terintegrasi dengan Google Gemini 1.5. Pengguna dapat mengirim foto atau deskripsi makanan, dan bot akan menganalisis kandungan gizi, mengestimasi kalori, serta memberikan saran diet personal secara real-time.",
-        "tech": ["Google Gemini 1.5", "Node.js", "WhatsApp API", "Multimodal AI", "TypeScript"],
+        "description": "Bot WhatsApp pintar yang saya integrasikan dengan Google Gemini 1.5. Pengguna cukup mengirimkan foto atau deskripsi makanan, kemudian bot akan menganalisis kandungan gizi, memperkirakan kalori, dan memberikan saran pola makan secara real-time.",
+        "tech": [
+          "Google Gemini 1.5",
+          "Node.js",
+          "WhatsApp API",
+          "Multimodal AI",
+          "TypeScript"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -88,8 +116,15 @@
         "id": "virtual-class",
         "title": "Virtual Class App",
         "category": "Native Android",
-        "description": "Aplikasi native Android berkinerja tinggi yang dibangun menggunakan Kotlin, MVVM Clean Architecture, dan Room database. Dilengkapi fitur verifikasi presensi real-time, pembagian materi kuliah, dan sinkronisasi data offline.",
-        "tech": ["Kotlin", "Android Jetpack", "MVVM", "Room DB", "Coroutines", "Retrofit"],
+        "description": "Aplikasi Android native yang saya kembangkan menggunakan Kotlin, Clean Architecture (MVVM), dan Room database. Aplikasi ini dirancang tangguh dengan fitur verifikasi presensi real-time, distribusi materi kuliah, dan kemampuan sinkronisasi data secara offline.",
+        "tech": [
+          "Kotlin",
+          "Android Jetpack",
+          "MVVM",
+          "Room DB",
+          "Coroutines",
+          "Retrofit"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": true
       },
@@ -97,8 +132,14 @@
         "id": "valorant-agent",
         "title": "Valorant Agent Explorer",
         "category": "Aplikasi Android Modular",
-        "description": "Aplikasi eksplorasi agent, abilities, dan senjata pada gim Valorant. Dirancang dengan Clean Architecture, struktur multi-module, pipeline otomatis CI/CD GitHub Actions, dan tata letak antarmuka yang responsif.",
-        "tech": ["Kotlin", "Clean Architecture", "Modular", "GitHub Actions CI/CD", "REST API"],
+        "description": "Sebuah aplikasi eksplorasi karakter, kemampuan, dan senjata untuk gim Valorant. Saya merancangnya menggunakan Clean Architecture, struktur multi-module, integrasi CI/CD otomatis dengan GitHub Actions, serta tampilan antarmuka yang responsif.",
+        "tech": [
+          "Kotlin",
+          "Clean Architecture",
+          "Modular",
+          "GitHub Actions CI/CD",
+          "REST API"
+        ],
         "github": "https://github.com/MuhammadJuzairi",
         "featured": false
       }
@@ -107,7 +148,7 @@
   "education": {
     "section_badge": "Pendidikan & Sertifikasi",
     "title": "Pendidikan & Kehormatan",
-    "subtitle": "Gelar sarjana universitas, pelatihan kejuruan berprestasi, dan sertifikasi industri resmi.",
+    "subtitle": "Latar belakang pendidikan formal, program pelatihan intensif, dan sertifikasi profesional yang mendukung karir saya.",
     "degrees_title": "Pendidikan Formal",
     "degrees": [
       {
@@ -115,14 +156,14 @@
         "institution": "Universitas Nurdin Hamzah",
         "period": "2020 - 2024",
         "honors": "Lulusan Terbaik • IPK 3.95 / 4.00",
-        "description": "Meraih predikat lulusan terbaik tingkat fakultas. Berfokus pada rekayasa perangkat lunak, perancangan basis data, dan sistem informasi enterprise."
+        "description": "Menyelesaikan studi dan meraih predikat lulusan terbaik di tingkat fakultas. Selama masa kuliah, saya banyak berfokus pada rekayasa perangkat lunak, perancangan basis data, dan pengembangan sistem informasi enterprise."
       },
       {
         "degree": "Cohort Mobile Development",
         "institution": "Bangkit Academy (Google, GoTo, Traveloka)",
         "period": "2023",
         "honors": "Lulusan Distinction (Top Performer)",
-        "description": "Program intensif rekayasa mobile yang mencakup pengembangan Android tingkat lanjut, Clean Architecture, Kotlin coroutines, dan integrasi Google Cloud."
+        "description": "Lulus dengan predikat Distinction pada program intensif rekayasa mobile ini. Di sini, saya mendalami pengembangan Android tingkat lanjut, penerapan Clean Architecture, penggunaan Kotlin coroutines, dan integrasi layanan Google Cloud."
       }
     ],
     "certifications_title": "Sertifikasi Profesional",
@@ -146,8 +187,8 @@
   },
   "contact": {
     "section_badge": "Hubungi Saya",
-    "title": "Mari berkolaborasi pada proyek Anda berikutnya.",
-    "subtitle": "Jika Anda memiliki pertanyaan seputar rekayasa perangkat lunak, pengembangan mobile, maupun peluang kerja sama, silakan hubungi saya.",
+    "title": "Mari berkolaborasi untuk proyek Anda selanjutnya.",
+    "subtitle": "Jika Anda memiliki pertanyaan seputar pengembangan perangkat lunak, pembuatan aplikasi mobile, atau ada peluang kerja sama yang menarik, jangan ragu untuk menghubungi saya.",
     "email_label": "Alamat Email",
     "location_label": "Lokasi",
     "location_value": "Jambi, Indonesia",
@@ -160,4 +201,3 @@
     "designed_with": "Dibangun dengan React, Vite & Tailwind CSS."
   }
 }
-
