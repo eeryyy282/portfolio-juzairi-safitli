@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <title>Muhammad Juzairi Safitli - Software Engineer & Mobile Developer</title>
+    <meta name="description" content="Personal portfolio of Muhammad Juzairi Safitli, Software Engineer and Mobile Developer showcasing projects, work experience, and educational background." />
+    <meta name="author" content="Muhammad Juzairi Safitli" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Anti-FOUC script for theme initialization -->
+    <script>
+      (function() {
+        try {
+          const storageKey = 'portfolio-theme';
+          const theme = localStorage.getItem(storageKey);
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (theme === 'dark' || (!theme && systemDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased font-sans transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

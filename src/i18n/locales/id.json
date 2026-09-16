@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "education": "Pendidikan",
+    "contact": "Kontak",
+    "menu": "Menu"
+  },
+  "hero": {
+    "greeting": "Halo, saya",
+    "name": "Muhammad Juzairi Safitli",
+    "title": "Software Engineer & Mobile Developer",
+    "badge_best_graduate": "Lulusan Terbaik (IPK 3.95)",
+    "badge_bangkit": "Distinction Graduate Bangkit Academy",
+    "cta_cv": "Unduh CV",
+    "cta_contact": "Hubungi Saya",
+    "cv_filename": "CV_Muhammad_Juzairi_Safitli.pdf"
+  },
+  "about": {
+    "section_badge": "Tentang Saya",
+    "title": "Membangun solusi perangkat lunak dengan presisi, rasa ingin tahu, dan fondasi yang kuat.",
+    "p1": "Saya adalah seorang Software Engineer dan Mobile Developer dengan fondasi akademik yang kokoh (lulus dengan IPK 3.95 sebagai Lulusan Terbaik Program Studi Sistem Informasi) serta pengalaman teruji dalam membangun solusi Android dan aplikasi web full-stack yang skalabel.",
+    "p2": "Perjalanan profesional saya mencakup kelulusan dengan predikat Distinction pada Bangkit Academy (dipimpin oleh Google, GoTo, dan Traveloka) di alur Mobile Development. Saya berfokus pada arsitektur perangkat lunak yang bersih (Clean Architecture), optimasi performa, serta integrasi teknologi kecerdasan buatan seperti Google Gemini ke dalam aplikasi nyata.",
+    "p3": "Baik dalam merancang aplikasi native Android berbasis Kotlin dengan pola MVVM maupun membangun aplikasi web berefisiensi tinggi, saya selalu mengedepankan praktik rekayasa perangkat lunak yang disiplin, pemecahan masalah yang proaktif, dan standar kualitas tinggi.",
+    "stat_experience": "Tahun Pengalaman",
+    "stat_projects": "Proyek Selesai",
+    "stat_gpa": "IPK Kelulusan",
+    "stat_students": "Siswa Dibimbing"
+  },
+  "experience": {
+    "section_badge": "Riwayat Karir",
+    "title": "Pengalaman Kerja",
+    "subtitle": "Peran profesional dalam mengelola infrastruktur IT, pengajaran pemrograman, dan manajemen sistem.",
+    "items": [
+      {
+        "role": "Magang IT / Asisten Pranata Komputer",
+        "company": "BPS Kota Jambi (Badan Pusat Statistik)",
+        "period": "Agu 2026 - Sekarang",
+        "type": "Magang",
+        "description": "Menyediakan dukungan infrastruktur IT teknis, bantuan pengolahan data statistik, serta dokumentasi sistem secara komprehensif guna mengoptimalkan operasional dan alur kerja regional.",
+        "skills": ["Infrastruktur IT", "Dokumentasi Sistem", "Pengolahan Data", "Operasional Jaringan"]
+      },
+      {
+        "role": "Guru Pemrograman",
+        "company": "Timedoor Academy",
+        "period": "Sep 2024 - Sep 2025",
+        "type": "Penuh Waktu / Pengajar",
+        "description": "Meraih tingkat kepuasan siswa & orang tua sebesar 93% sembari membimbing 20+ siswa dalam penalaran komputasional, logika pemrograman, algoritma, serta dasar-dasar rekayasa perangkat lunak.",
+        "skills": ["Algoritma", "Logika Pemrograman", "Mentoring", "Penyampaian Kurikulum"]
+      },
+      {
+        "role": "Asisten Laboratorium",
+        "company": "LPTIK Universitas Nurdin Hamzah",
+        "period": "Agu 2023 - Okt 2023",
+        "type": "Asisten Akademik",
+        "description": "Mengelola infrastruktur laboratorium komputer universitas dengan memastikan zero-downtime selama sesi praktikum, mengawasi ujian teknis, serta membantu dosen dalam konfigurasi sistem.",
+        "skills": ["Hardware & Jaringan", "Zero-Downtime Management", "Konfigurasi Linux/Windows", "Bimbingan Mahasiswa"]
+      }
+    ]
+  },
+  "projects": {
+    "section_badge": "Karya Unggulan",
+    "title": "Proyek Pilihan",
+    "subtitle": "Koleksi proyek rekayasa perangkat lunak mulai dari integrasi AI multimodal, aplikasi native Android, hingga otomasi web.",
+    "view_repo": "Lihat Repositori",
+    "view_live": "Demo Langsung",
+    "items": [
+      {
+        "id": "bast-v2",
+        "title": "BAST V2",
+        "category": "Aplikasi Web Full-stack",
+        "description": "Platform otomasi dokumen Berita Acara Serah Terima (BAST). Sistem ini memproses spreadsheet Excel dan secara dinamis menghasilkan dokumen Word berformat baku resmi, memangkas waktu pembuatan dokumen manual secara drastis.",
+        "tech": ["Vite", "React", "Node.js", "Express", "Tailwind CSS", "Otomasi Dokumen"],
+        "github": "https://github.com/MuhammadJuzairi",
+        "featured": true
+      },
+      {
+        "id": "a2bot",
+        "title": "Double A Calorie (A2Bot)",
+        "category": "Bot WhatsApp Berbasis AI",
+        "description": "Bot WhatsApp cerdas yang terintegrasi dengan Google Gemini 1.5. Pengguna dapat mengirim foto atau deskripsi makanan, dan bot akan menganalisis kandungan gizi, mengestimasi kalori, serta memberikan saran diet personal secara real-time.",
+        "tech": ["Google Gemini 1.5", "Node.js", "WhatsApp API", "Multimodal AI", "TypeScript"],
+        "github": "https://github.com/MuhammadJuzairi",
+        "featured": true
+      },
+      {
+        "id": "virtual-class",
+        "title": "Virtual Class App",
+        "category": "Native Android",
+        "description": "Aplikasi native Android berkinerja tinggi yang dibangun menggunakan Kotlin, MVVM Clean Architecture, dan Room database. Dilengkapi fitur verifikasi presensi real-time, pembagian materi kuliah, dan sinkronisasi data offline.",
+        "tech": ["Kotlin", "Android Jetpack", "MVVM", "Room DB", "Coroutines", "Retrofit"],
+        "github": "https://github.com/MuhammadJuzairi",
+        "featured": true
+      },
+      {
+        "id": "valorant-agent",
+        "title": "Valorant Agent Explorer",
+        "category": "Aplikasi Android Modular",
+        "description": "Aplikasi eksplorasi agent, abilities, dan senjata pada gim Valorant. Dirancang dengan Clean Architecture, struktur multi-module, pipeline otomatis CI/CD GitHub Actions, dan tata letak antarmuka yang responsif.",
+        "tech": ["Kotlin", "Clean Architecture", "Modular", "GitHub Actions CI/CD", "REST API"],
+        "github": "https://github.com/MuhammadJuzairi",
+        "featured": false
+      }
+    ]
+  },
+  "education": {
+    "section_badge": "Pendidikan & Sertifikasi",
+    "title": "Pendidikan & Kehormatan",
+    "subtitle": "Gelar sarjana universitas, pelatihan kejuruan berprestasi, dan sertifikasi industri resmi.",
+    "degrees_title": "Pendidikan Formal",
+    "degrees": [
+      {
+        "degree": "Sarjana Komputer (S.Kom) - Sistem Informasi",
+        "institution": "Universitas Nurdin Hamzah",
+        "period": "2020 - 2024",
+        "honors": "Lulusan Terbaik • IPK 3.95 / 4.00",
+        "description": "Meraih predikat lulusan terbaik tingkat fakultas. Berfokus pada rekayasa perangkat lunak, perancangan basis data, dan sistem informasi enterprise."
+      },
+      {
+        "degree": "Cohort Mobile Development",
+        "institution": "Bangkit Academy (Google, GoTo, Traveloka)",
+        "period": "2023",
+        "honors": "Lulusan Distinction (Top Performer)",
+        "description": "Program intensif rekayasa mobile yang mencakup pengembangan Android tingkat lanjut, Clean Architecture, Kotlin coroutines, dan integrasi Google Cloud."
+      }
+    ],
+    "certifications_title": "Sertifikasi Profesional",
+    "certifications": [
+      {
+        "name": "Google Android Developer Expert",
+        "issuer": "Dicoding Indonesia & Google",
+        "date": "Kredensial Terverifikasi"
+      },
+      {
+        "name": "Machine Learning for Android",
+        "issuer": "Bangkit Academy & Google",
+        "date": "Kredensial Terverifikasi"
+      },
+      {
+        "name": "English for Business Communication",
+        "issuer": "Universitas Nurdin Hamzah & Mitra",
+        "date": "Tersertifikasi Profesional"
+      }
+    ]
+  },
+  "contact": {
+    "section_badge": "Hubungi Saya",
+    "title": "Mari berkolaborasi pada proyek Anda berikutnya.",
+    "subtitle": "Jika Anda memiliki pertanyaan seputar rekayasa perangkat lunak, pengembangan mobile, maupun peluang kerja sama, silakan hubungi saya.",
+    "email_label": "Alamat Email",
+    "location_label": "Lokasi",
+    "location_value": "Jambi, Indonesia",
+    "send_email": "Kirim Email",
+    "connect_linkedin": "Terhubung di LinkedIn",
+    "visit_github": "Jelajahi GitHub"
+  },
+  "footer": {
+    "rights": "Hak cipta dilindungi.",
+    "designed_with": "Dibangun dengan React, Vite & Tailwind CSS."
+  }
+}
+
