@@ -219,7 +219,7 @@ export const siteContent: PortfolioContent = {
           "Menggunakan antarmuka modern yang warnanya disesuaikan dengan identitas BPS (Navy Blue).",
         ],
         tags: ["Vite", "Node.js", "Express.js", "Docx Automation", "JSZip", "Tailwind CSS"],
-        githubUrl: "https://github.com/eeryyy282",
+        githubUrl: "https://github.com/eeryyy282/bast-v2",
         caseStudy: {
           overview:
             "Setiap periode sensus, BPS Kota Jambi perlu menerbitkan BAST dan kontrak kerja untuk ratusan mitra statistik. Awalnya, proses pembuatan dokumen ini dikerjakan satu per satu secara manual, yang memakan waktu berhari-hari dan rawan salah ketik nama atau data mitra.",
@@ -256,7 +256,7 @@ export const siteContent: PortfolioContent = {
           "Memakai penyimpanan lokal berformat JSON yang ringan tanpa butuh server database yang mahal.",
         ],
         tags: ["Google Gemini AI", "Node.js", "Baileys WhatsApp API", "JSON DB", "Dotenv"],
-        githubUrl: "https://github.com/eeryyy282",
+        githubUrl: "https://github.com/eeryyy282/double-a-calorie",
         caseStudy: {
           overview:
             "A2Bot saya buat agar orang-orang lebih mudah mencatat asupan kalori mereka tanpa harus repot menginstal atau membuka aplikasi fitness khusus. Pengguna cukup nge-chat bot di WhatsApp tentang apa yang baru saja mereka makan.",
@@ -292,7 +292,7 @@ export const siteContent: PortfolioContent = {
           "Berpindah antar layar dengan mulus berkat Jetpack Navigation.",
         ],
         tags: ["Kotlin", "Android Native", "MVVM", "Koin", "Coroutines & Flow", "Room DB", "Jetpack Navigation"],
-        githubUrl: "https://github.com/eeryyy282",
+        githubUrl: "https://github.com/eeryyy282/virtual-class-universitas-nurdin-hamzah",
         caseStudy: {
           overview:
             "Aplikasi ini adalah proyek Tugas Akhir saya, dirancang khusus untuk membantu mahasiswa Universitas Nurdin Hamzah yang sering terkendala sinyal internet tidak stabil saat mengikuti kelas online.",
@@ -329,7 +329,7 @@ export const siteContent: PortfolioContent = {
           "Punya sistem CI/CD otomatis untuk testing dan compile file APK setiap kali ada pembaruan kode.",
         ],
         tags: ["Clean Architecture", "Kotlin", "Coroutines Flow", "Dagger/Koin", "MapBox", "Lottie", "Firebase Crashlytics", "CI/CD"],
-        githubUrl: "https://github.com/eeryyy282",
+        githubUrl: "https://github.com/eeryyy282/valorant-agent-android",
         caseStudy: {
           overview:
             "Aplikasi ini pada dasarnya adalah ensiklopedia game Valorant, tapi saya rancang seserius mungkin untuk membuktikan pemahaman saya tentang standar pengembangan aplikasi Android skala besar.",
