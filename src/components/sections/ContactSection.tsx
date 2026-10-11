@@ -12,10 +12,11 @@ import {
   Copy,
   Check,
 } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const ContactSection: React.FC = () => {
-  const { contact } = siteContent;
+  const { content } = useLanguage();
+  const { contact } = content;
   const [formData, setFormData] = useState({
     name: "",
     email: "",

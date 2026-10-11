@@ -2,10 +2,11 @@
 
 import React from "react";
 import { Briefcase, Calendar, MapPin, CheckCircle2 } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const ExperienceSection: React.FC = () => {
-  const { experience } = siteContent;
+  const { content } = useLanguage();
+  const { experience } = content;
 
   return (
     <section id="experience" className="py-16 sm:py-24 relative">

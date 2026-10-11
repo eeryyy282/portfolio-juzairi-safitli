@@ -2,7 +2,7 @@
 
 import React from "react";
 import { GraduationCap, Layers, Smartphone, Cpu, Users, Award, BookOpen } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { MagicCard } from "@/components/ui/MagicCard";
 
 const pillarIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -13,7 +13,8 @@ const pillarIconMap: Record<string, React.ComponentType<{ className?: string }>>
 };
 
 export const AboutSection: React.FC = () => {
-  const { about } = siteContent;
+  const { content } = useLanguage();
+  const { about } = content;
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-tech-navy-50/50 dark:bg-slate-900/40 relative">

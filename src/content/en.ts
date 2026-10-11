@@ -1,0 +1,516 @@
+import { PortfolioContent } from "./types";
+
+export const siteContent: PortfolioContent = {
+  metadata: {
+    title: "Muhammad Juzairi Safitli, S.Kom. | Software Engineer & Game Developer",
+    description:
+      "Professional portfolio of Muhammad Juzairi Safitli, S.Kom. - Software Engineer & Game Developer, Best Graduate of Universitas Nurdin Hamzah (GPA 3.95) & Distinction Graduate at Bangkit Academy by Google.",
+    keywords: [
+      "Muhammad Juzairi Safitli",
+      "Software Engineer",
+      "Game Developer",
+      "Android Developer",
+      "Kotlin",
+      "Jetpack Compose",
+      "Next.js",
+      "Google Gemini AI",
+      "Bangkit Academy Distinction",
+      "Juzairi Portfolio",
+    ],
+    ogTitle: "Muhammad Juzairi Safitli, S.Kom. | Software Engineer Portfolio",
+    ogDescription:
+      "Explore the track record, software engineering projects, and technical skills of Muhammad Juzairi Safitli.",
+  },
+  navbar: {
+    brandName: "Muhammad Juzairi Safitli",
+    brandDegree: "S.Kom.",
+    brandRole: "Software Engineer",
+    downloadCvBtn: "Download CV",
+    partnerTooltip: "Visit Yulti Syaridayanti's Portfolio 💖",
+    partnerUrl: "https://portfolio-yulti-syaridayanti.vercel.app/",
+    navItems: [
+      { id: "hero", label: "Home", href: "#hero" },
+      { id: "about", label: "About", href: "#about" },
+      { id: "experience", label: "Experience", href: "#experience" },
+      { id: "projects", label: "Projects", href: "#projects" },
+      { id: "skills", label: "Skills", href: "#skills" },
+      { id: "contact", label: "Contact", href: "#contact" },
+    ],
+  },
+  hero: {
+    greetingBadge: "👋 Hi! Welcome to My Portfolio",
+    fullName: "Muhammad Juzairi Safitli",
+    degree: "S.Kom.",
+    headline: "Software Engineer & Game Developer",
+    bio: "Top Graduate in Information Systems from Universitas Nurdin Hamzah (GPA 3.95) and Distinction Graduate from Bangkit Academy by Google. I am enthusiastic about building Android applications, integrating AI like Google Gemini, and crafting reliable, functional modern web solutions.",
+    badges: {
+      cumlaude: "Best Graduate (GPA 3.95)",
+      distinction: "Distinction Graduate (Bangkit by Google)",
+      role: "IT Intern at BPS Kota Jambi",
+    },
+    downloadCvBtn: "Download Full CV",
+    contactBtn: "Get in Touch",
+    explorePrompt: "Explore Experience & Projects",
+  },
+  about: {
+    badge: "ABOUT ME",
+    title: "Building Clean and Practical Digital Solutions",
+    subtitle:
+      "Focused on writing clean code, quick to pick up new technologies, and passionate about collaborative teamwork.",
+    bioNarrative:
+      "As a Software Engineer and Game Developer, I have always loved solving real problems through code. Currently, I work as an IT Intern (Computer Systems Assistant) at BPS Kota Jambi (BPS - Statistics Indonesia), where I help manage statistical data and automate administrative workflows.",
+    approachNarrative:
+      "Beyond writing code with Clean Architecture, I bring hands-on experience in computer lab management and coding instruction. I enjoy exploring AI to build applications that are not just technically sound, but genuinely make users' daily tasks easier.",
+    educationSummary: {
+      institution: "Universitas Nurdin Hamzah",
+      degree: "Bachelor of Information Systems (S.Kom.)",
+      predicate: "Wisudawan Terbaik (Best Graduate)",
+      gpa: "3.95 / 4.00",
+      focusHighlight:
+        "Focused on software engineering and database management. Frequently collaborated directly with faculty members on campus digitization projects.",
+    },
+    stats: [
+      {
+        value: "3.95",
+        label: "Graduation GPA (4.00 Scale)",
+        note: "Best Graduate of UNH",
+      },
+      {
+        value: "Top Tier",
+        label: "Distinction Graduate",
+        note: "Bangkit Academy by Google",
+      },
+      {
+        value: "20+",
+        label: "Students Mentored",
+        note: "93% teaching satisfaction rate",
+      },
+      {
+        value: "4+",
+        label: "Major Projects Delivered",
+        note: "Android, Web & AI Systems",
+      },
+    ],
+    pillars: [
+      {
+        title: "Clean Architecture",
+        desc: "Applying modular code structures with minimal dependencies, making codebases maintainable and easy to scale.",
+        tag: "Software Engineering",
+        iconName: "Layers",
+      },
+      {
+        title: "Native Android",
+        desc: "Specialized in Kotlin, Jetpack Compose, Coroutines/Flow, Room DB, and dependency injection tools like Koin.",
+        tag: "Mobile Development",
+        iconName: "Smartphone",
+      },
+      {
+        title: "AI & Automation",
+        desc: "Leveraging AI models like Google Gemini 1.5 Flash to build interactive, solution-oriented automation systems.",
+        tag: "AI & Backend",
+        iconName: "Cpu",
+      },
+      {
+        title: "Mentorship",
+        desc: "Experienced in teaching core programming logic and maintaining smooth, dependable computer lab operations.",
+        tag: "Communication",
+        iconName: "Users",
+      },
+    ],
+  },
+  experience: {
+    badge: "WORK EXPERIENCE",
+    title: "Career & Track Record",
+    subtitle:
+      "My hands-on experience across government agencies, tech academies, university laboratories, and national certification programs.",
+    items: [
+      {
+        id: "bps-jambi",
+        role: "IT Intern - Computer Systems Assistant",
+        organization: "Badan Pusat Statistik Kota Jambi",
+        location: "Jambi, Indonesia",
+        period: "Aug 2026 - Present",
+        badge: "Current Role",
+        highlights: [
+          "Supported IT infrastructure and data processing to ensure smooth city-level statistical operations.",
+          "Troubleshot hardware/software issues and maintained technical documentation for internal office systems.",
+          "Developed the BAST V2 web application to automate the generation of Handover Certificates (BAST) and partner work contracts.",
+        ],
+        tags: ["Data Systems", "Fullstack Web", "Express.js", "Vite", "IT Infrastructure"],
+      },
+      {
+        id: "timedoor-academy",
+        role: "Teacher",
+        organization: "Timedoor Academy",
+        location: "Jambi, Indonesia",
+        period: "Sep 2024 - Sep 2025",
+        badge: "Tech Education",
+        highlights: [
+          "Taught programming logic using Roblox Studio (Lua), Construct 3, and Python through project-based learning.",
+          "Mentored over 20 students in building their own software and game projects from scratch.",
+          "Enhanced children's digital literacy, achieving a 93% satisfaction rating from students and parents.",
+        ],
+        tags: ["Python", "Roblox Studio", "Construct 3", "Project-Based Learning", "Mentoring"],
+      },
+      {
+        id: "bangkit-academy",
+        role: "Mobile Development Cohort (Distinction Graduate)",
+        organization: "Bangkit Academy by Google, GoTo, Traveloka",
+        location: "Remote",
+        period: "Feb - Jul 2024",
+        badge: "Top Achievement (Distinction)",
+        highlights: [
+          "Graduated with Distinction, ranking among the Top Tier out of thousands of participants across Indonesia.",
+          "Mastered advanced Android development, covering Kotlin, Jetpack Compose, Clean Architecture, and Dependency Injection.",
+          "Honed skills in time management, professional communication, and collaborative team leadership on software capstone projects.",
+        ],
+        tags: ["Android Native", "Kotlin", "Jetpack Compose", "Clean Architecture", "Google Certified"],
+      },
+      {
+        id: "lptik-unh",
+        role: "Laboratory Assistant",
+        organization: "Lembaga Pengembangan Teknologi Informasi dan Komunikasi (LPTIK) UNH",
+        location: "Jambi, Indonesia",
+        period: "Aug - Oct 2023",
+        badge: "Infrastructure & Networking",
+        highlights: [
+          "Maintained hardware and network systems across all campus computer labs to ensure classes ran smoothly without technical disruptions.",
+          "Assisted lecturers during practical lab sessions while upholding lab safety, equipment integrity, and security protocols.",
+        ],
+        tags: ["Network Maintenance", "Hardware Troubleshooting", "Lab Management", "Academic Collaboration"],
+      },
+      {
+        id: "kampus-merdeka",
+        role: "Teacher & Educator Participant",
+        organization: "Kampus Merdeka",
+        location: "Jambi, Indonesia",
+        period: "Feb - Jun 2023",
+        badge: "Community Service",
+        highlights: [
+          "Collaborated with school teachers to integrate technology into everyday teaching and learning activities.",
+          "Helped redesign the school library layout to be more interactive and digitized school information boards.",
+          "Applied fundamental pedagogical practices, child psychology principles, and Kurikulum Merdeka guidelines in real classroom environments.",
+        ],
+        tags: ["Digital Literacy", "Pedagogy", "Curriculum Integration", "Educational Tech"],
+      },
+    ],
+  },
+  projects: {
+    badge: "PROJECT PORTFOLIO",
+    title: "Featured Work & Case Studies",
+    subtitle:
+      "A selection of my key projects, ranging from native Android apps and fullstack web platforms to AI-driven assistants.",
+    categories: ["All", "Android", "Web", "AI & Backend"],
+    caseStudyBtn: "View Case Study",
+    sourceCodeBtn: "GitHub Source Code",
+    items: [
+      {
+        id: "bast-v2",
+        title: "BAST V2 (Badan Pusat Statistik Kota Jambi)",
+        role: "Fullstack Web Developer",
+        period: "Aug 2026",
+        location: "Jambi, Indonesia",
+        category: "Web",
+        description:
+          "Web application designed to automate the generation of Handover Certificates (BAST) and partner contracts at BPS Kota Jambi.",
+        highlights: [
+          "Automated manual workflows by parsing Excel spreadsheets and generating hundreds of populated Word documents.",
+          "Bundles generated documents into a single ready-to-print ZIP archive in just seconds.",
+          "Features a clean modern user interface aligned with official BPS brand colors (Navy Blue).",
+        ],
+        tags: ["Vite", "Node.js", "Express.js", "Docx Automation", "JSZip", "Tailwind CSS"],
+        githubUrl: "https://github.com/eeryyy282/bast-v2",
+        caseStudy: {
+          overview:
+            "During census and survey cycles, BPS Kota Jambi must issue BAST documents and contracts for hundreds of field partners. Previously, staff prepared these documents one by one manually, which took days and often led to clerical errors in partner names or details.",
+          architecture: [
+            "Frontend: SPA built with Vite and Tailwind CSS for file upload, column mapping, and live data previews.",
+            "Backend: RESTful API built with Node.js & Express.js responsible for parsing spreadsheet data (XLSX).",
+            "Templating Engine: Used docx-templater to inject partner information directly into official BPS Word templates.",
+            "Compression: Packaged hundreds of output documents into a single ZIP file using JSZip for easy batch download.",
+          ],
+          challenges: [
+            "Handling inconsistent Excel column layouts and varying formatting across different survey divisions.",
+            "Generating large volumes of documents concurrently on the server without triggering Node.js memory leaks.",
+          ],
+          solutions: [
+            "Implemented robust schema validation before data parsing begins to catch mismatches early.",
+            "Adopted streaming buffers and automatic memory cleanup routines to maintain server stability during batch processing.",
+          ],
+          impact:
+            "Reduced a document creation process that previously took days down to under 1 minute for hundreds of partners, ensuring tidy, consistent, and error-free results.",
+        },
+      },
+      {
+        id: "double-a-calorie",
+        title: "Double A Calorie (A2Bot)",
+        role: "AI Engineer & Backend Developer",
+        period: "Dec 2025",
+        location: "Jambi, Indonesia",
+        category: "AI & Backend",
+        description:
+          "An intelligent WhatsApp bot powered by Google Gemini 1.5 Flash to track daily calories effortlessly through natural chat conversations.",
+        highlights: [
+          "Integrated with Google Gemini AI to recognize meal items and estimate caloric values accurately.",
+          "Supports both direct private messages and shared WhatsApp group chats.",
+          "Utilizes a lightweight JSON-based local database without requiring expensive external server databases.",
+        ],
+        tags: ["Google Gemini AI", "Node.js", "Baileys WhatsApp API", "JSON DB", "Dotenv"],
+        githubUrl: "https://github.com/eeryyy282/double-a-calorie",
+        caseStudy: {
+          overview:
+            "I created A2Bot to make calorie tracking seamless without forcing users to download or open dedicated fitness apps. Users simply message the WhatsApp bot about what they just ate in plain language.",
+          architecture: [
+            "WhatsApp Client: Built with the Baileys library to maintain a stable, responsive socket connection.",
+            "AI Inference Engine: Uses Google Gemini 1.5 Flash for natural language understanding (NLP) and calorie estimation based on portions.",
+            "Data Layer: Lightweight JSON database storing user IDs, daily calorie goals, and intake history.",
+          ],
+          challenges: [
+            "Handling informal Indonesian slang, regional dish names, and colloquial abbreviations.",
+            "Preventing race conditions or crashes when multiple group members send messages simultaneously.",
+          ],
+          solutions: [
+            "Engineered contextual system prompts so the AI properly understands Indonesian food culture and texting patterns.",
+            "Implemented a straightforward message queue to prevent write conflicts and database corruption.",
+          ],
+          impact:
+            "Made healthy habits and calorie tracking frictionless by embedding the tool directly inside the chat app people use every day.",
+        },
+      },
+      {
+        id: "virtual-class-app",
+        title: "Virtual Class Android App",
+        role: "Native Android Developer (Undergraduate Thesis)",
+        period: "May 2025",
+        location: "Jambi, Indonesia",
+        category: "Android",
+        description:
+          "A remote learning platform for students and lecturers at UNH, featuring offline capability, automated attendance, and assignment management.",
+        highlights: [
+          "Built using MVVM architecture and modular dependency injection with Koin.",
+          "Fully functional offline thanks to Room Database with automatic synchronization powered by Coroutines & Flow.",
+          "Seamless in-app screen transitions utilizing Jetpack Navigation.",
+        ],
+        tags: ["Kotlin", "Android Native", "MVVM", "Koin", "Coroutines & Flow", "Room DB", "Jetpack Navigation"],
+        githubUrl: "https://github.com/eeryyy282/virtual-class-universitas-nurdin-hamzah",
+        caseStudy: {
+          overview:
+            "This app was my undergraduate thesis project, engineered specifically to assist Universitas Nurdin Hamzah students who frequently struggled with spotty internet connectivity during online classes.",
+          architecture: [
+            "Presentation Layer: Leveraged ViewModel and StateFlow for clean, reactive UI updates.",
+            "Domain Layer: Encapsulated business rules for attendance and assignments inside standalone Use Cases.",
+            "Data Layer: Local-first caching with Room DB so students can view class materials even without internet access.",
+            "Dependency Injection: Powered by Koin for lightweight, concise configuration.",
+          ],
+          challenges: [
+            "Preventing student attendance tampering when the app operates in offline mode.",
+            "Synchronizing queued assignment data smoothly once a network connection is re-established.",
+          ],
+          solutions: [
+            "Recorded server-verified timestamps and stored attendance records using encrypted local storage.",
+            "Utilized Android WorkManager to reliably dispatch background sync tasks once network stability is detected.",
+          ],
+          impact:
+            "Awarded an 'A' grade and recognized as the Best Undergraduate Thesis, ultimately leading to graduation as the university's Best Graduate (Valedictorian).",
+        },
+      },
+      {
+        id: "valorant-agent-android",
+        title: "Valorant Agent Android",
+        role: "Android Engineer (Course Submission)",
+        period: "Sep 2024",
+        location: "Remote",
+        category: "Android",
+        description:
+          "An Android encyclopedia and tactical guide for Valorant agents, built strictly to industry-grade security and architectural standards.",
+        highlights: [
+          "Implemented full Clean Architecture to decouple features and facilitate long-term maintainability.",
+          "Integrated MapBox for tactical mini-maps, Lottie animations, and Firebase Crashlytics for real-time monitoring.",
+          "Configured automated CI/CD pipelines to run test suites and assemble release APKs on every commit.",
+        ],
+        tags: ["Clean Architecture", "Kotlin", "Coroutines Flow", "Dagger/Koin", "MapBox", "Lottie", "Firebase Crashlytics", "CI/CD"],
+        githubUrl: "https://github.com/eeryyy282/valorant-agent-android",
+        caseStudy: {
+          overview:
+            "While the subject is a Valorant game encyclopedia, I engineered it with the rigor of an enterprise product to demonstrate mastery over scalable, production-grade Android standards.",
+          architecture: [
+            "Modular Clean Architecture: Partitioned into Dynamic Feature Modules to optimize build times and app footprint.",
+            "Reactive Data Streams: Utilized Kotlin Flow for smooth, non-blocking data delivery across layers.",
+            "Monitoring: Integrated Firebase Crashlytics to monitor runtime health and capture unexpected exceptions.",
+            "DevOps: Configured GitHub Actions to automate unit testing and APK distribution builds.",
+          ],
+          challenges: [
+            "Rendering high-resolution artwork and animations smoothly on low-end or budget devices.",
+            "Minimizing mobile network bandwidth when fetching agent updates from the remote API.",
+          ],
+          solutions: [
+            "Optimized Lottie vector animations and enforced lazy loading on all heavy image assets.",
+            "Implemented HTTP response caching alongside a local Room database to eliminate redundant network calls.",
+          ],
+          impact:
+            "Earned a perfect score in Bangkit Academy by Google and remains my primary reference project showcasing clean Android system design.",
+        },
+      },
+    ],
+  },
+  skills: {
+    badge: "TECHNICAL SKILLS",
+    title: "Tech Stack & Specializations",
+    subtitle:
+      "Programming languages, frameworks, and developer tools I leverage to build dependable software.",
+    categories: [
+      {
+        title: "Programming Languages",
+        iconName: "Code2",
+        skills: ["Kotlin", "TypeScript", "JavaScript", "SQL", "Python", "Pascal", "HTML5 & CSS3"],
+      },
+      {
+        title: "Mobile Android Engineering",
+        iconName: "Smartphone",
+        skills: [
+          "Android Native (Kotlin)",
+          "Jetpack Compose",
+          "Clean Architecture",
+          "MVVM Architecture",
+          "Coroutines & Flow",
+          "Koin & Dagger",
+          "Room Database",
+          "Jetpack Navigation",
+        ],
+      },
+      {
+        title: "Web, AI & Backend",
+        iconName: "Server",
+        skills: [
+          "Next.js (App Router)",
+          "React.js",
+          "Node.js & Express.js",
+          "Vite",
+          "Google Gemini 1.5 Flash AI",
+          "WhatsApp API (Baileys)",
+          "RESTful APIs",
+          "Tailwind CSS",
+        ],
+      },
+      {
+        title: "Tools, DevOps & Infrastructure",
+        iconName: "Wrench",
+        skills: [
+          "Git & GitHub",
+          "Android Studio",
+          "Firebase (Crashlytics, Auth)",
+          "CI/CD Pipelines (GitHub Actions)",
+          "Postman",
+          "Linux & Terminal",
+          "Vercel Deployment",
+        ],
+      },
+      {
+        title: "Soft Skills & Methodologies",
+        iconName: "BrainCircuit",
+        skills: [
+          "Adaptive Learning",
+          "Critical Thinking",
+          "Public Speaking & Teaching",
+          "Project Management",
+          "Problem Solving",
+          "Agile / Scrum Collaboration",
+        ],
+      },
+    ],
+    awardsHeaderBadge: "CERTIFICATIONS & HONORS",
+    awardsHeaderTitle: "Academic & Professional Honors",
+    awards: [
+      {
+        title: "Best Graduate (Wisudawan Terbaik)",
+        category: "University Academic Honors",
+        description: "Graduated as the Best Graduate in Information Systems at Universitas Nurdin Hamzah with a final GPA of 3.95.",
+        iconName: "Trophy",
+        year: "Dec 2025",
+      },
+      {
+        title: "Distinction Graduate - Mobile Development",
+        category: "Google, GoTo, Traveloka (Bangkit Academy)",
+        description: "Recognized among the Top Tier graduates nationwide in the Bangkit Academy digital talent incubation program.",
+        iconName: "Award",
+        year: "Jul 2024",
+      },
+      {
+        title: "Google: Android Developer Expert",
+        category: "Technical Competency Certification",
+        description: "Official certification by Google verifying professional expertise in building Android applications with Kotlin.",
+        iconName: "CheckCircle",
+        year: "2024",
+      },
+      {
+        title: "Google: Machine Learning for Android",
+        category: "Mobile AI Competency Certification",
+        description: "Certification verifying competency in deploying and integrating on-device machine learning models in Android.",
+        iconName: "Cpu",
+        year: "2024",
+      },
+      {
+        title: "English for Business Communication",
+        category: "Professional Communication",
+        description: "Certification covering English proficiency for presentations, workplace discussions, and professional technical correspondence.",
+        iconName: "Globe",
+        year: "2024",
+      },
+    ],
+  },
+  contact: {
+    badge: "CONTACT",
+    title: "Let's Connect",
+    subtitle:
+      "I am always open to discussing tech, exploring collaboration opportunities, or considering Software Engineer, Web, and Android roles.",
+    emailTitle: "Send Email",
+    emailValue: "airiagustus82@gmail.com",
+    phoneTitle: "Phone & WhatsApp",
+    phoneValue: "+62 821-8665-7316",
+    chatWhatsAppBtn: "Chat on WhatsApp",
+    whatsAppUrl: "https://wa.me/6282186657316?text=Hi%20Juzairi,%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.",
+    locationTitle: "Location",
+    locationValue: "Jambi, Indonesia (Open to On-site & Remote)",
+    cvCardTitle: "Curriculum Vitae",
+    cvCardDesc: "Feel free to download my formal CV for a complete summary of my education, work history, and project portfolio.",
+    cvCardBtn: "Download CV (.PDF)",
+    cvPath: "/cv/CV_Muhammad_Juzairi_Safitli.pdf",
+    formTitle: "Send a Direct Message",
+    formSubtitle: "Fill out the form below and I will get back to you as soon as possible.",
+    nameLabel: "Full Name",
+    namePlaceholder: "Enter your name",
+    emailLabel: "Email Address",
+    emailPlaceholder: "name@company.com",
+    subjectLabel: "Subject",
+    subjectPlaceholder: "Job Opportunity / Collaboration / Inquiry",
+    messageLabel: "Message",
+    messagePlaceholder: "Write your message or project details here...",
+    submitBtn: "Send Message",
+    successTitle: "Message Sent Successfully!",
+    successMessageTemplate: (name: string, email: string) =>
+      `Thank you, ${name}! Your message has been received. I will reply to ${email} shortly.`,
+    sendAnotherBtn: "Send Another Message",
+  },
+  footer: {
+    brandName: "Muhammad Juzairi Safitli",
+    brandDegreeRole: "S.Kom. | Software Engineer & Game Developer",
+    missionStatement:
+      "Dedicated to crafting practical, responsive, and impactful technology across software engineering and AI systems.",
+    partnerNote: "Crafted with heart, standing alongside",
+    partnerName: "Yulti Syaridayanti, S.K.M.",
+    partnerUrl: "https://portfolio-yulti-syaridayanti.vercel.app/",
+    navTitle: "Quick Navigation",
+    contactTitle: "Contact & Socials",
+    backToTopBtn: "Back to Top",
+    copyrightText: `© ${new Date().getFullYear()} Muhammad Juzairi Safitli. All rights reserved.`,
+  },
+  ui: {
+    heartbeatBadge: "CONNECTED PULSE",
+    avatarFallbackRole: "Software Engineer & Game Developer",
+    avatarFallbackSpecialty: "Android & AI Systems",
+    avatarBadgeBestGraduate: "Best Graduate",
+    avatarBadgeGpa: "GPA 3.95 / 4.00",
+    avatarBadgeDistinction: "Distinction Graduate",
+    avatarBadgeBangkit: "Bangkit Academy by Google",
+  },
+};

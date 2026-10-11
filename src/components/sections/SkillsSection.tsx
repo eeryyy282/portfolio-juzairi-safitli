@@ -13,7 +13,7 @@ import {
   Cpu,
   Globe,
 } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { MagicCard } from "@/components/ui/MagicCard";
 
 const categoryIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -33,7 +33,8 @@ const awardIconMap: Record<string, React.ComponentType<{ className?: string }>> 
 };
 
 export const SkillsSection: React.FC = () => {
-  const { skills } = siteContent;
+  const { content } = useLanguage();
+  const { skills } = content;
 
   return (
     <section id="skills" className="py-16 sm:py-24 relative">

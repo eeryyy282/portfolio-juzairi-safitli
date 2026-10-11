@@ -2,19 +2,28 @@
 
 import React, { useState } from "react";
 import { FolderGit2, ExternalLink, Github, ArrowRight, Layers, Smartphone, Server, Sparkles } from "lucide-react";
-import { siteContent, ProjectItem } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { ProjectItem } from "@/content";
 import { MagicCard } from "@/components/ui/MagicCard";
 import { ProjectModal } from "@/components/ui/ProjectModal";
 
 export const ProjectsSection: React.FC = () => {
-  const { projects } = siteContent;
-  const [selectedCategory, setSelectedCategory] = useState<string>("Semua");
+  const { content } = useLanguage();
+  const { projects } = content;
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number>(0);
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
   const filteredProjects =
-    selectedCategory === "Semua"
+    selectedCategoryIndex === 0
       ? projects.items
-      : projects.items.filter((p) => p.category === selectedCategory);
+      : projects.items.filter((p) => {
+          const cat = projects.categories[selectedCategoryIndex];
+          return p.category === cat;
+        });
+
+  const currentModalProject = activeModalProject
+    ? projects.items.find((p) => p.id === activeModalProject.id) || activeModalProject
+    : null;
 
   return (
     <section id="projects" className="py-16 sm:py-24 bg-tech-navy-50/50 dark:bg-slate-900/40 relative">
@@ -34,12 +43,12 @@ export const ProjectsSection: React.FC = () => {
 
         {/* Category Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {projects.categories.map((cat) => {
-            const isSelected = selectedCategory === cat;
+          {projects.categories.map((cat, idx) => {
+            const isSelected = selectedCategoryIndex === idx;
             return (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => setSelectedCategoryIndex(idx)}
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
                   isSelected
                     ? "bg-tech-blue-600 text-white shadow-md shadow-tech-blue-600/30 scale-105"
@@ -142,7 +151,7 @@ export const ProjectsSection: React.FC = () => {
 
         {/* Case Study Detail Modal */}
         <ProjectModal
-          project={activeModalProject}
+          project={currentModalProject}
           onClose={() => setActiveModalProject(null)}
         />
       </div>

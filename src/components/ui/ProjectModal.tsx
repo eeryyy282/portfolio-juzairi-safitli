@@ -3,13 +3,46 @@
 import React, { useEffect } from "react";
 import { X, ExternalLink, Github, CheckCircle2, AlertTriangle, Layers, Award, Terminal } from "lucide-react";
 import { ProjectItem } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface ProjectModalProps {
   project: ProjectItem | null;
   onClose: () => void;
 }
 
+const modalLabels = {
+  en: {
+    role: "Role",
+    overview: "Background & Project Overview",
+    architecture: "Architecture & System Components",
+    challenges: "Technical Challenges",
+    solutions: "Engineering Solutions",
+    impact: "Impact & Measurable Results",
+    techStack: "Tech Stack Used",
+    viewGithub: "View on GitHub",
+    liveDemo: "Live Demo",
+    close: "Close",
+    closeAria: "Close Case Study",
+  },
+  id: {
+    role: "Peran",
+    overview: "Latar Belakang & Ringkasan Proyek",
+    architecture: "Arsitektur & Komponen Sistem",
+    challenges: "Tantangan Teknis",
+    solutions: "Solusi Rekayasa",
+    impact: "Dampak & Hasil Terukur",
+    techStack: "Tech Stack yang Digunakan",
+    viewGithub: "Lihat di GitHub",
+    liveDemo: "Kunjungi Demo",
+    close: "Tutup",
+    closeAria: "Tutup Detail Kasus",
+  },
+};
+
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const { locale } = useLanguage();
+  const labels = modalLabels[locale];
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -53,13 +86,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.title}
             </h3>
             <p className="text-sm font-semibold text-tech-blue-600 dark:text-tech-blue-400 mt-1">
-              Peran: {project.role}
+              {labels.role}: {project.role}
             </p>
           </div>
 
           <button
             onClick={onClose}
-            aria-label="Tutup Detail Kasus"
+            aria-label={labels.closeAria}
             className="p-2 rounded-2xl bg-tech-navy-50 dark:bg-slate-800 text-tech-navy-500 hover:text-tech-navy-900 dark:hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
@@ -72,7 +105,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h4 className="flex items-center gap-2 font-heading font-bold text-base text-tech-navy-900 dark:text-white mb-2">
               <Terminal className="w-4 h-4 text-tech-blue-500" />
-              Latar Belakang & Ringkasan Proyek
+              {labels.overview}
             </h4>
             <p className="leading-relaxed bg-tech-blue-50/50 dark:bg-slate-800/50 p-4 rounded-2xl border border-tech-blue-100 dark:border-slate-800">
               {caseStudy.overview}
@@ -83,7 +116,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h4 className="flex items-center gap-2 font-heading font-bold text-base text-tech-navy-900 dark:text-white mb-2">
               <Layers className="w-4 h-4 text-tech-cyan-500" />
-              Arsitektur & Komponen Sistem
+              {labels.architecture}
             </h4>
             <ul className="space-y-2">
               {caseStudy.architecture.map((item, idx) => (
@@ -100,7 +133,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="p-4 rounded-2xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-900/40">
               <h5 className="flex items-center gap-1.5 font-bold text-amber-800 dark:text-amber-400 mb-2">
                 <AlertTriangle className="w-4 h-4" />
-                Tantangan Teknis
+                {labels.challenges}
               </h5>
               <ul className="space-y-1.5 text-xs text-amber-900/90 dark:text-amber-200/90">
                 {caseStudy.challenges.map((c, i) => (
@@ -115,7 +148,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="p-4 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40">
               <h5 className="flex items-center gap-1.5 font-bold text-emerald-800 dark:text-emerald-400 mb-2">
                 <CheckCircle2 className="w-4 h-4" />
-                Solusi Rekayasa
+                {labels.solutions}
               </h5>
               <ul className="space-y-1.5 text-xs text-emerald-900/90 dark:text-emerald-200/90">
                 {caseStudy.solutions.map((s, i) => (
@@ -132,7 +165,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h4 className="flex items-center gap-2 font-heading font-bold text-base text-tech-navy-900 dark:text-white mb-2">
               <Award className="w-4 h-4 text-tech-blue-500" />
-              Dampak & Hasil Terukur
+              {labels.impact}
             </h4>
             <div className="p-4 rounded-2xl bg-gradient-to-r from-tech-blue-50 to-tech-cyan-50 dark:from-slate-800 dark:to-slate-800/80 border border-tech-blue-200/70 dark:border-slate-700">
               <p className="font-medium text-tech-navy-800 dark:text-slate-200 leading-relaxed">
@@ -144,7 +177,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Tech Tags */}
           <div>
             <h5 className="text-xs font-bold text-tech-navy-500 dark:text-slate-400 uppercase tracking-wider mb-2">
-              Tech Stack yang Digunakan
+              {labels.techStack}
             </h5>
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
@@ -170,7 +203,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-tech-navy-900 dark:bg-white text-white dark:text-tech-navy-900 text-xs font-bold hover:bg-tech-navy-800 dark:hover:bg-slate-100 transition-colors shadow-sm"
               >
                 <Github className="w-4 h-4" />
-                <span>Lihat di GitHub</span>
+                <span>{labels.viewGithub}</span>
               </a>
             )}
             {project.liveUrl && (
@@ -181,7 +214,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-tech-blue-600 text-white text-xs font-bold hover:bg-tech-blue-700 transition-colors shadow-sm"
               >
                 <ExternalLink className="w-4 h-4" />
-                <span>Kunjungi Demo</span>
+                <span>{labels.liveDemo}</span>
               </a>
             )}
           </div>
@@ -190,11 +223,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             onClick={onClose}
             className="px-5 py-2 rounded-2xl bg-tech-navy-100 dark:bg-slate-800 text-tech-navy-700 dark:text-slate-200 text-xs font-semibold hover:bg-tech-navy-200 dark:hover:bg-slate-700 transition-colors"
           >
-            Tutup
+            {labels.close}
           </button>
         </div>
       </div>
     </div>
   );
 };
-

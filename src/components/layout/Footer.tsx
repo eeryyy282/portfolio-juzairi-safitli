@@ -3,10 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUp, Github, Mail, Phone, MapPin, Heart } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const Footer: React.FC = () => {
-  const { footer, navbar, contact } = siteContent;
+  const { content } = useLanguage();
+  const { footer, navbar, contact } = content;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

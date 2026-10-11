@@ -14,8 +14,9 @@ import {
   X,
   Heart,
 } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   hero: Home,
@@ -27,7 +28,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export const Navbar: React.FC = () => {
-  const { navbar, contact } = siteContent;
+  const { content } = useLanguage();
+  const { navbar, contact } = content;
   const [activeSection, setActiveSection] = useState<string>("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -112,6 +114,9 @@ export const Navbar: React.FC = () => {
             <span className="sr-only">{navbar.partnerTooltip}</span>
           </a>
 
+          {/* Language Switcher */}
+          <LanguageToggle />
+
           {/* Theme Switcher */}
           <ThemeToggle />
 
@@ -139,6 +144,7 @@ export const Navbar: React.FC = () => {
             <Heart className="w-4 h-4 fill-partner-pink-400 text-partner-pink-500" />
           </a>
 
+          <LanguageToggle />
           <ThemeToggle />
 
           <button

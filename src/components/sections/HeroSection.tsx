@@ -3,12 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { FileDown, Mail, ArrowDown, Award, Sparkles, Terminal } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { BlobPhotoFrame } from "@/components/ui/BlobPhotoFrame";
 import { HeartbeatLine } from "@/components/ui/HeartbeatLine";
 
 export const HeroSection: React.FC = () => {
-  const { hero, contact } = siteContent;
+  const { content } = useLanguage();
+  const { hero, contact } = content;
 
   return (
     <section id="hero" className="relative pt-28 sm:pt-36 pb-12 sm:pb-16 overflow-hidden">

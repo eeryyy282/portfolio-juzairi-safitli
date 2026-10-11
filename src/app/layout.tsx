@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import { siteContent } from "@/content";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   creator: siteContent.hero.fullName,
   openGraph: {
     type: "website",
-    locale: "id_ID",
+    locale: "en_US",
     url: siteUrl,
     title: siteContent.metadata.ogTitle,
     description: siteContent.metadata.ogDescription,
@@ -64,13 +65,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning className={`${jakarta.variable} ${quicksand.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${quicksand.variable}`}>
       <body className="font-sans antialiased text-tech-navy-900 dark:text-slate-100 bg-tech-navy-50 dark:bg-slate-950 min-h-screen flex flex-col transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <ScrollProgress />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <LanguageProvider>
+            <ScrollProgress />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

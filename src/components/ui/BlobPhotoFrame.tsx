@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Sparkles, Award, Terminal, Code2 } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface BlobPhotoFrameProps {
   imageSrc?: string;
@@ -15,7 +15,8 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
   className = "",
 }) => {
   const [imageError, setImageError] = useState(false);
-  const { hero, ui } = siteContent;
+  const { content } = useLanguage();
+  const { hero, ui } = content;
 
   return (
     <div className={`relative flex items-center justify-center ${className}`}>

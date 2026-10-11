@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Activity, Zap } from "lucide-react";
-import { siteContent } from "@/content";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface HeartbeatLineProps {
   className?: string;
@@ -13,7 +13,8 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
   className = "",
   withBadge = true,
 }) => {
-  const { ui } = siteContent;
+  const { content } = useLanguage();
+  const { ui } = content;
 
   return (
     <div className={`relative flex items-center justify-center w-full my-8 ${className}`}>
