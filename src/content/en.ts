@@ -57,6 +57,7 @@ export const siteContent: PortfolioContent = {
     title: "Building Clean and Practical Digital Solutions",
     subtitle:
       "Focused on writing clean code, quick to pick up new technologies, and passionate about collaborative teamwork.",
+    philosophyTitle: "Engineering Philosophy & Professional Dedication",
     bioNarrative:
       "As a Software Engineer and Game Developer, I have always loved solving real problems through code. Currently, I work as an IT Intern (Computer Systems Assistant) at BPS Kota Jambi (BPS - Statistics Indonesia), where I help manage statistical data and automate administrative workflows.",
     approachNarrative:
@@ -64,8 +65,10 @@ export const siteContent: PortfolioContent = {
     educationSummary: {
       institution: "Universitas Nurdin Hamzah",
       degree: "Bachelor of Information Systems (S.Kom.)",
-      predicate: "Wisudawan Terbaik (Best Graduate)",
+      predicate: "Best Graduate (Valedictorian)",
       gpa: "3.95 / 4.00",
+      gpaLabel: "GPA",
+      graduationDate: "Graduation: December 2025 • Jambi, Indonesia",
       focusHighlight:
         "Focused on software engineering and database management. Frequently collaborated directly with faculty members on campus digitization projects.",
     },
@@ -91,6 +94,7 @@ export const siteContent: PortfolioContent = {
         note: "Android, Web & AI Systems",
       },
     ],
+    pillarsTitle: "Core Competency Pillars",
     pillars: [
       {
         title: "Clean Architecture",
@@ -203,6 +207,8 @@ export const siteContent: PortfolioContent = {
     categories: ["All", "Android", "Web", "AI & Backend"],
     caseStudyBtn: "View Case Study",
     sourceCodeBtn: "GitHub Source Code",
+    viewGithubAria: "View code on GitHub",
+    viewLiveAria: "Visit Live Demo",
     items: [
       {
         id: "bast-v2",
@@ -422,7 +428,7 @@ export const siteContent: PortfolioContent = {
     awardsHeaderTitle: "Academic & Professional Honors",
     awards: [
       {
-        title: "Best Graduate (Wisudawan Terbaik)",
+        title: "Best Graduate (Valedictorian)",
         category: "University Academic Honors",
         description: "Graduated as the Best Graduate in Information Systems at Universitas Nurdin Hamzah with a final GPA of 3.95.",
         iconName: "Trophy",
@@ -471,7 +477,10 @@ export const siteContent: PortfolioContent = {
     whatsAppUrl: "https://wa.me/6282186657316?text=Hi%20Juzairi,%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.",
     locationTitle: "Location",
     locationValue: "Jambi, Indonesia (Open to On-site & Remote)",
+    copyEmailTooltip: "Copy Email",
+    copiedEmailTooltip: "Email Copied!",
     cvCardTitle: "Curriculum Vitae",
+    cvFormatNote: "PDF Format • Print Ready",
     cvCardDesc: "Feel free to download my formal CV for a complete summary of my education, work history, and project portfolio.",
     cvCardBtn: "Download CV (.PDF)",
     cvPath: "/cv/CV_Muhammad_Juzairi_Safitli.pdf",
@@ -490,6 +499,9 @@ export const siteContent: PortfolioContent = {
     successMessageTemplate: (name: string, email: string) =>
       `Thank you, ${name}! Your message has been received. I will reply to ${email} shortly.`,
     sendAnotherBtn: "Send Another Message",
+    defaultSubject: "Message from Portfolio",
+    mailtoBodyTemplate: (name: string, email: string, message: string) =>
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
   },
   footer: {
     brandName: "Muhammad Juzairi Safitli",
@@ -512,5 +524,7 @@ export const siteContent: PortfolioContent = {
     avatarBadgeGpa: "GPA 3.95 / 4.00",
     avatarBadgeDistinction: "Distinction Graduate",
     avatarBadgeBangkit: "Bangkit Academy by Google",
+    themeToggleLight: "Switch to Light Mode",
+    themeToggleDark: "Switch to Dark Mode",
   },
 };

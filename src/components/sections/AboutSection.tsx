@@ -39,7 +39,7 @@ export const AboutSection: React.FC = () => {
             <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm space-y-4">
               <h3 className="font-heading font-bold text-lg text-tech-navy-900 dark:text-white flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-tech-blue-500" />
-                Filosofi Rekayasa & Dedikasi Profesional
+                {about.philosophyTitle}
               </h3>
               <p className="text-sm text-tech-navy-700 dark:text-slate-300 leading-relaxed">
                 {about.bioNarrative}
@@ -73,7 +73,7 @@ export const AboutSection: React.FC = () => {
                 <div className="my-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-tech-blue-100/70 dark:bg-tech-blue-950/60 border border-tech-blue-200 dark:border-tech-blue-800">
                   <Award className="w-4 h-4 text-tech-blue-600 dark:text-tech-blue-400" />
                   <span className="text-xs font-bold text-tech-blue-800 dark:text-tech-blue-200">
-                    IPK: {about.educationSummary.gpa}
+                    {about.educationSummary.gpaLabel}: {about.educationSummary.gpa}
                   </span>
                 </div>
 
@@ -83,7 +83,7 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="pt-4 border-t border-tech-navy-100 dark:border-slate-800/80 mt-4 text-[11px] text-tech-navy-500 dark:text-slate-500">
-                Kelulusan: Desember 2025 • Jambi, Indonesia
+                {about.educationSummary.graduationDate}
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export const AboutSection: React.FC = () => {
         {/* 4 Engineering Pillars */}
         <div>
           <h3 className="text-center font-heading font-bold text-xl text-tech-navy-900 dark:text-white mb-6">
-            Pilar Kompetensi Utama
+            {about.pillarsTitle}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {about.pillars.map((pillar, idx) => {

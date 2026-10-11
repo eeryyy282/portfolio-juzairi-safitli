@@ -32,9 +32,9 @@ export const ContactSection: React.FC = () => {
 
     // Trigger mailto as fallback so the message opens directly in their client
     const mailtoUrl = `mailto:${contact.emailValue}?subject=${encodeURIComponent(
-      formData.subject || "Pesan dari Portofolio"
+      formData.subject || contact.defaultSubject
     )}&body=${encodeURIComponent(
-      `Nama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`
+      contact.mailtoBodyTemplate(formData.name, formData.email, formData.message)
     )}`;
 
     // Set submitted state for friendly UI feedback
@@ -89,9 +89,9 @@ export const ContactSection: React.FC = () => {
               </div>
               <button
                 onClick={copyEmail}
-                aria-label="Salin Alamat Email"
+                aria-label={copiedEmail ? contact.copiedEmailTooltip : contact.copyEmailTooltip}
                 className="p-2 rounded-xl bg-tech-navy-50 dark:bg-slate-800 text-tech-navy-600 dark:text-slate-300 hover:text-tech-navy-900 dark:hover:text-white transition-colors"
-                title="Salin Email"
+                title={copiedEmail ? contact.copiedEmailTooltip : contact.copyEmailTooltip}
               >
                 {copiedEmail ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
               </button>
@@ -146,7 +146,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-base">{contact.cvCardTitle}</h4>
-                  <span className="text-[11px] text-tech-blue-200 font-medium">Format PDF • Siap Cetak</span>
+                  <span className="text-[11px] text-tech-blue-200 font-medium">{contact.cvFormatNote}</span>
                 </div>
               </div>
               <p className="text-xs text-tech-blue-100 leading-relaxed">

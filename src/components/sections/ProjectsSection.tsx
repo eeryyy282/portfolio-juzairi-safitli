@@ -126,7 +126,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Lihat kode di GitHub"
+                      aria-label={projects.viewGithubAria}
                       className="p-2 rounded-xl bg-tech-navy-100 dark:bg-slate-800 text-tech-navy-700 dark:text-slate-300 hover:text-tech-navy-900 dark:hover:text-white transition-colors"
                     >
                       <Github className="w-4 h-4" />
@@ -137,7 +137,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Kunjungi Demo"
+                      aria-label={projects.viewLiveAria}
                       className="p-2 rounded-xl bg-tech-blue-100 dark:bg-tech-blue-950 text-tech-blue-700 dark:text-tech-blue-300 hover:bg-tech-blue-200 transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />

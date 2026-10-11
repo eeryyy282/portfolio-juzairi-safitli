@@ -103,6 +103,7 @@ export interface PortfolioContent {
     badge: string;
     title: string;
     subtitle: string;
+    philosophyTitle: string;
     bioNarrative: string;
     approachNarrative: string;
     educationSummary: {
@@ -110,9 +111,12 @@ export interface PortfolioContent {
       degree: string;
       predicate: string;
       gpa: string;
+      gpaLabel: string;
+      graduationDate: string;
       focusHighlight: string;
     };
     stats: StatItem[];
+    pillarsTitle: string;
     pillars: PillarItem[];
   };
   experience: {
@@ -128,6 +132,8 @@ export interface PortfolioContent {
     categories: string[];
     caseStudyBtn: string;
     sourceCodeBtn: string;
+    viewGithubAria: string;
+    viewLiveAria: string;
     items: ProjectItem[];
   };
   skills: {
@@ -151,7 +157,10 @@ export interface PortfolioContent {
     whatsAppUrl: string;
     locationTitle: string;
     locationValue: string;
+    copyEmailTooltip: string;
+    copiedEmailTooltip: string;
     cvCardTitle: string;
+    cvFormatNote: string;
     cvCardDesc: string;
     cvCardBtn: string;
     cvPath: string;
@@ -169,6 +178,8 @@ export interface PortfolioContent {
     successTitle: string;
     successMessageTemplate: (name: string, email: string) => string;
     sendAnotherBtn: string;
+    defaultSubject: string;
+    mailtoBodyTemplate: (name: string, email: string, message: string) => string;
   };
   footer: {
     brandName: string;
@@ -190,6 +201,8 @@ export interface PortfolioContent {
     avatarBadgeGpa: string;
     avatarBadgeDistinction: string;
     avatarBadgeBangkit: string;
+    themeToggleLight: string;
+    themeToggleDark: string;
   };
 }
 

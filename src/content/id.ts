@@ -57,6 +57,7 @@ export const siteContent: PortfolioContent = {
     title: "Membangun Solusi Digital yang Bersih dan Praktis",
     subtitle:
       "Fokus pada penulisan kode yang rapi, cepat belajar teknologi baru, dan senang bekerja sama dalam tim.",
+    philosophyTitle: "Filosofi Rekayasa & Dedikasi Profesional",
     bioNarrative:
       "Sebagai seorang Software Engineer dan Game Developer, saya selalu tertarik untuk memecahkan masalah melalui baris kode. Saat ini, saya bekerja sebagai IT Intern (Asisten Pranata Komputer) di Badan Pusat Statistik (BPS) Kota Jambi, di mana saya banyak membantu mengelola data statistik dan membuat sistem administrasi menjadi lebih otomatis.",
     approachNarrative:
@@ -66,6 +67,8 @@ export const siteContent: PortfolioContent = {
       degree: "Sarjana Sistem Informasi (S.Kom.)",
       predicate: "Wisudawan Terbaik (Best Graduate)",
       gpa: "3.95 / 4.00",
+      gpaLabel: "IPK",
+      graduationDate: "Kelulusan: Desember 2025 • Jambi, Indonesia",
       focusHighlight:
         "Fokus pada rekayasa perangkat lunak dan manajemen basis data. Sering berkolaborasi langsung dengan dosen untuk proyek digitalisasi kampus.",
     },
@@ -91,6 +94,7 @@ export const siteContent: PortfolioContent = {
         note: "Android, Web & Sistem AI",
       },
     ],
+    pillarsTitle: "Pilar Kompetensi Utama",
     pillars: [
       {
         title: "Clean Architecture",
@@ -203,6 +207,8 @@ export const siteContent: PortfolioContent = {
     categories: ["Semua", "Android", "Web", "AI & Backend"],
     caseStudyBtn: "Lihat Studi Kasus",
     sourceCodeBtn: "Kode Sumber GitHub",
+    viewGithubAria: "Lihat kode di GitHub",
+    viewLiveAria: "Kunjungi Demo",
     items: [
       {
         id: "bast-v2",
@@ -471,7 +477,10 @@ export const siteContent: PortfolioContent = {
     whatsAppUrl: "https://wa.me/6282186657316?text=Halo%20Juzairi,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi.",
     locationTitle: "Lokasi",
     locationValue: "Jambi, Indonesia (Terbuka untuk On-site & Remote)",
+    copyEmailTooltip: "Salin Email",
+    copiedEmailTooltip: "Email Tersalin!",
     cvCardTitle: "Curriculum Vitae",
+    cvFormatNote: "Format PDF • Siap Cetak",
     cvCardDesc: "Silakan unduh dokumen CV resmi saya untuk melihat ringkasan pendidikan, pengalaman kerja, dan daftar proyek secara lengkap.",
     cvCardBtn: "Unduh CV (.PDF)",
     cvPath: "/cv/CV_Muhammad_Juzairi_Safitli.pdf",
@@ -490,6 +499,9 @@ export const siteContent: PortfolioContent = {
     successMessageTemplate: (name: string, email: string) =>
       `Terima kasih, ${name}! Pesan Anda sudah masuk. Saya akan membalasnya segera ke email ${email}.`,
     sendAnotherBtn: "Kirim Pesan Lagi",
+    defaultSubject: "Pesan dari Portofolio",
+    mailtoBodyTemplate: (name: string, email: string, message: string) =>
+      `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
   },
   footer: {
     brandName: "Muhammad Juzairi Safitli",
@@ -512,5 +524,7 @@ export const siteContent: PortfolioContent = {
     avatarBadgeGpa: "IPK 3.95 / 4.00",
     avatarBadgeDistinction: "Distinction Graduate",
     avatarBadgeBangkit: "Bangkit Academy by Google",
+    themeToggleLight: "Beralih ke Mode Terang",
+    themeToggleDark: "Beralih ke Mode Gelap",
   },
 };
