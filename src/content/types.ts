@@ -155,6 +155,10 @@ export interface PortfolioContent {
     phoneValue: string;
     chatWhatsAppBtn: string;
     whatsAppUrl: string;
+    linkedInTitle: string;
+    linkedInValue: string;
+    linkedInUrl: string;
+    connectLinkedInBtn: string;
     locationTitle: string;
     locationValue: string;
     copyEmailTooltip: string;

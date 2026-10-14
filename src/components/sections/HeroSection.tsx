@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FileDown, Mail, ArrowDown, Award, Sparkles, Terminal } from "lucide-react";
+import { FileDown, Mail, ArrowDown, Award, Sparkles, Terminal, Linkedin, Github } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { BlobPhotoFrame } from "@/components/ui/BlobPhotoFrame";
 import { HeartbeatLine } from "@/components/ui/HeartbeatLine";
@@ -74,6 +74,29 @@ export const HeroSection: React.FC = () => {
                 <Mail className="w-4 h-4 text-tech-blue-500" />
                 <span>{hero.contactBtn}</span>
               </Link>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href={contact.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  title="LinkedIn"
+                  className="p-3 rounded-full bg-white dark:bg-slate-900 hover:bg-sky-50 dark:hover:bg-slate-800 text-tech-navy-700 dark:text-slate-200 border border-tech-navy-200 dark:border-slate-800 shadow-sm transition-all duration-200 hover:-translate-y-0.5 group"
+                >
+                  <Linkedin className="w-4 h-4 text-[#0077b5] group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://github.com/eeryyy282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  title="GitHub"
+                  className="p-3 rounded-full bg-white dark:bg-slate-900 hover:bg-tech-blue-50 dark:hover:bg-slate-800 text-tech-navy-700 dark:text-slate-200 border border-tech-navy-200 dark:border-slate-800 shadow-sm transition-all duration-200 hover:-translate-y-0.5 group"
+                >
+                  <Github className="w-4 h-4 text-tech-navy-900 dark:text-white group-hover:scale-110 transition-transform" />
+                </a>
+              </div>
             </div>
           </div>
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUp, Github, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, Phone, MapPin, Heart } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const Footer: React.FC = () => {
@@ -106,10 +106,21 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2 pt-2">
                 <a
+                  href={contact.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  title="LinkedIn"
+                  className="w-8 h-8 rounded-xl bg-tech-navy-100 dark:bg-slate-800 flex items-center justify-center text-tech-navy-700 dark:text-slate-300 hover:text-[#0077b5] dark:hover:text-[#0a66c2] hover:bg-sky-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
                   href="https://github.com/eeryyy282"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
+                  title="GitHub"
                   className="w-8 h-8 rounded-xl bg-tech-navy-100 dark:bg-slate-800 flex items-center justify-center text-tech-navy-700 dark:text-slate-300 hover:text-tech-blue-600 dark:hover:text-tech-blue-400 hover:bg-tech-blue-50 dark:hover:bg-slate-700 transition-colors"
                 >
                   <Github className="w-4 h-4" />

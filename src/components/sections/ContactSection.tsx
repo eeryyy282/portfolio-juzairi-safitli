@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Copy,
   Check,
+  Linkedin,
 } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
@@ -119,6 +120,32 @@ export const ContactSection: React.FC = () => {
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>{contact.chatWhatsAppBtn}</span>
+                </a>
+              </div>
+            </div>
+
+            {/* LinkedIn Card */}
+            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-950 text-[#0077b5] dark:text-sky-400 flex items-center justify-center shrink-0 border border-sky-200/60 dark:border-sky-800">
+                <Linkedin className="w-5 h-5" />
+              </div>
+              <div className="space-y-2 flex-1">
+                <div>
+                  <h4 className="font-heading font-bold text-sm text-tech-navy-900 dark:text-white">
+                    {contact.linkedInTitle}
+                  </h4>
+                  <p className="text-xs sm:text-sm font-semibold text-tech-navy-700 dark:text-slate-300 mt-0.5">
+                    {contact.linkedInValue}
+                  </p>
+                </div>
+                <a
+                  href={contact.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0077b5] hover:bg-[#005f93] text-white text-xs font-bold shadow-sm transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                  <span>{contact.connectLinkedInBtn}</span>
                 </a>
               </div>
             </div>
