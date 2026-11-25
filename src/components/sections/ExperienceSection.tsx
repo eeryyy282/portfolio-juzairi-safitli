@@ -12,10 +12,10 @@ export const ExperienceSection: React.FC = () => {
     <section id="experience" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-tech-blue-100 text-tech-blue-700 dark:bg-tech-blue-950 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800 tracking-wider">
+        <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
+          <p className="text-xs font-semibold text-tech-blue-600 dark:text-tech-blue-400">
             {experience.badge}
-          </span>
+          </p>
           <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-tech-navy-900 dark:text-white">
             {experience.title}
           </h2>
@@ -53,11 +53,11 @@ export const ExperienceSection: React.FC = () => {
                       isEven ? "sm:pr-10" : "sm:pl-10"
                     }`}
                   >
-                    <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                       {/* Badge & Period */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         {item.badge && (
-                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-tech-blue-50 dark:bg-tech-blue-950 text-tech-blue-700 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
+                          <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-tech-blue-50 dark:bg-tech-blue-950 text-tech-blue-700 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
                             {item.badge}
                           </span>
                         )}

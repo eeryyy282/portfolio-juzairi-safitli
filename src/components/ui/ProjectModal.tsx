@@ -10,38 +10,9 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-const modalLabels = {
-  en: {
-    role: "Role",
-    overview: "Background & Project Overview",
-    architecture: "Architecture & System Components",
-    challenges: "Technical Challenges",
-    solutions: "Engineering Solutions",
-    impact: "Impact & Measurable Results",
-    techStack: "Tech Stack Used",
-    viewGithub: "View on GitHub",
-    liveDemo: "Live Demo",
-    close: "Close",
-    closeAria: "Close Case Study",
-  },
-  id: {
-    role: "Peran",
-    overview: "Latar Belakang & Ringkasan Proyek",
-    architecture: "Arsitektur & Komponen Sistem",
-    challenges: "Tantangan Teknis",
-    solutions: "Solusi Rekayasa",
-    impact: "Dampak & Hasil Terukur",
-    techStack: "Tech Stack yang Digunakan",
-    viewGithub: "Lihat di GitHub",
-    liveDemo: "Kunjungi Demo",
-    close: "Tutup",
-    closeAria: "Tutup Detail Kasus",
-  },
-};
-
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  const { locale } = useLanguage();
-  const labels = modalLabels[locale];
+  const { content } = useLanguage();
+  const labels = content.projects.modal;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -70,12 +41,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border border-tech-blue-200 dark:border-slate-800 rounded-3xl shadow-2xl z-10 p-6 sm:p-8 animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border border-tech-blue-200 dark:border-slate-800 rounded-xl shadow-2xl z-10 p-6 sm:p-8">
         {/* Header */}
         <div className="flex items-start justify-between gap-4 pb-4 border-b border-tech-navy-100 dark:border-slate-800">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-tech-blue-100 text-tech-blue-700 dark:bg-tech-blue-950 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
+              <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-tech-blue-50 text-tech-blue-700 dark:bg-tech-blue-950 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
                 {project.category}
               </span>
               <span className="text-xs text-tech-navy-500 dark:text-slate-400 font-medium">
@@ -167,7 +138,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <Award className="w-4 h-4 text-tech-blue-500" />
               {labels.impact}
             </h4>
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-tech-blue-50 to-tech-cyan-50 dark:from-slate-800 dark:to-slate-800/80 border border-tech-blue-200/70 dark:border-slate-700">
+            <div className="p-4 rounded-lg bg-tech-blue-50/70 dark:bg-slate-800/80 border border-tech-blue-200/70 dark:border-slate-700">
               <p className="font-medium text-tech-navy-800 dark:text-slate-200 leading-relaxed">
                 {caseStudy.impact}
               </p>
@@ -176,7 +147,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tech Tags */}
           <div>
-            <h5 className="text-xs font-bold text-tech-navy-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+            <h5 className="text-xs font-semibold text-tech-navy-500 dark:text-slate-400 mb-2">
               {labels.techStack}
             </h5>
             <div className="flex flex-wrap gap-1.5">

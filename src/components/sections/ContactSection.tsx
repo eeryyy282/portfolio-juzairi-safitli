@@ -3,15 +3,13 @@
 import React, { useState } from "react";
 import {
   Mail,
-  Phone,
   MapPin,
   FileDown,
-  Send,
   MessageSquare,
-  CheckCircle2,
   Copy,
   Check,
   Linkedin,
+  AlertCircle,
 } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
@@ -24,41 +22,56 @@ export const ContactSection: React.FC = () => {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copyError, setCopyError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    // Trigger mailto as fallback so the message opens directly in their client
-    const mailtoUrl = `mailto:${contact.emailValue}?subject=${encodeURIComponent(
-      formData.subject || contact.defaultSubject
-    )}&body=${encodeURIComponent(
-      contact.mailtoBodyTemplate(formData.name, formData.email, formData.message)
-    )}`;
-
-    // Set submitted state for friendly UI feedback
-    setSubmitted(true);
-
-    // Also optionally trigger mailto
-    window.open(mailtoUrl, "_blank");
+  const buildComposedBody = () => {
+    const senderName = formData.name.trim() || "-";
+    const senderEmail = formData.email.trim() || "-";
+    const bodyMessage = formData.message.trim() || contact.defaultMessageBody;
+    return contact.mailtoBodyTemplate(senderName, senderEmail, bodyMessage);
   };
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(contact.emailValue);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
+  const getMailtoHref = () => {
+    const subject = formData.subject.trim() || contact.defaultSubject;
+    return `mailto:${contact.emailValue}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      buildComposedBody()
+    )}`;
+  };
+
+  const getWhatsAppHref = () => {
+    if (!formData.name.trim() && !formData.subject.trim() && !formData.message.trim()) {
+      return contact.whatsAppUrl;
+    }
+    const subject = formData.subject.trim() || contact.defaultSubject;
+    const text = `${subject}\n\n${buildComposedBody()}`;
+    return `${contact.whatsAppBaseUrl}?text=${encodeURIComponent(text)}`;
+  };
+
+  const copyEmail = async () => {
+    setCopyError(false);
+    try {
+      if (typeof navigator === "undefined" || !navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API unavailable");
+      }
+      await navigator.clipboard.writeText(contact.emailValue);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    } catch (error) {
+      console.error("Failed to copy email address to clipboard:", error);
+      setCopyError(true);
+      setTimeout(() => setCopyError(false), 3000);
+    }
   };
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-tech-navy-50/50 dark:bg-slate-900/40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-tech-blue-100 text-tech-blue-700 dark:bg-tech-blue-950 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800 tracking-wider">
+        <div className="text-left max-w-3xl space-y-2 mb-12">
+          <p className="text-xs font-semibold text-tech-blue-600 dark:text-tech-blue-400">
             {contact.badge}
-          </span>
+          </p>
           <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-tech-navy-900 dark:text-white">
             {contact.title}
           </h2>
@@ -71,11 +84,9 @@ export const ContactSection: React.FC = () => {
           {/* Left Column: Direct Reach Cards */}
           <div className="lg:col-span-5 space-y-4">
             {/* Email Card */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-2xl bg-tech-blue-50 dark:bg-tech-blue-950 text-tech-blue-600 dark:text-tech-blue-400 flex items-center justify-center shrink-0 border border-tech-blue-200/60 dark:border-tech-blue-800">
-                  <Mail className="w-5 h-5" />
-                </div>
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-tech-blue-600 dark:text-tech-blue-400 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-heading font-bold text-sm text-tech-navy-900 dark:text-white">
                     {contact.emailTitle}
@@ -90,19 +101,35 @@ export const ContactSection: React.FC = () => {
               </div>
               <button
                 onClick={copyEmail}
-                aria-label={copiedEmail ? contact.copiedEmailTooltip : contact.copyEmailTooltip}
-                className="p-2 rounded-xl bg-tech-navy-50 dark:bg-slate-800 text-tech-navy-600 dark:text-slate-300 hover:text-tech-navy-900 dark:hover:text-white transition-colors"
-                title={copiedEmail ? contact.copiedEmailTooltip : contact.copyEmailTooltip}
+                aria-label={
+                  copyError
+                    ? contact.copyErrorTooltip
+                    : copiedEmail
+                    ? contact.copiedEmailTooltip
+                    : contact.copyEmailTooltip
+                }
+                className="p-2 rounded-lg bg-tech-navy-50 dark:bg-slate-800 text-tech-navy-600 dark:text-slate-300 hover:text-tech-navy-900 dark:hover:text-white transition-colors"
+                title={
+                  copyError
+                    ? contact.copyErrorTooltip
+                    : copiedEmail
+                    ? contact.copiedEmailTooltip
+                    : contact.copyEmailTooltip
+                }
               >
-                {copiedEmail ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                {copyError ? (
+                  <AlertCircle className="w-4 h-4 text-rose-500" />
+                ) : copiedEmail ? (
+                  <Check className="w-4 h-4 text-emerald-500" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
               </button>
             </div>
 
             {/* WhatsApp Card */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-200/60 dark:border-emerald-800">
-                <MessageSquare className="w-5 h-5" />
-              </div>
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3">
+              <MessageSquare className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
               <div className="space-y-2 flex-1">
                 <div>
                   <h4 className="font-heading font-bold text-sm text-tech-navy-900 dark:text-white">
@@ -116,7 +143,7 @@ export const ContactSection: React.FC = () => {
                   href={contact.whatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-600 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-xs font-bold transition-colors"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>{contact.chatWhatsAppBtn}</span>
@@ -125,10 +152,8 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* LinkedIn Card */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-950 text-[#0077b5] dark:text-sky-400 flex items-center justify-center shrink-0 border border-sky-200/60 dark:border-sky-800">
-                <Linkedin className="w-5 h-5" />
-              </div>
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3">
+              <Linkedin className="w-5 h-5 text-[#0077b5] dark:text-sky-400 shrink-0 mt-0.5" />
               <div className="space-y-2 flex-1">
                 <div>
                   <h4 className="font-heading font-bold text-sm text-tech-navy-900 dark:text-white">
@@ -142,19 +167,17 @@ export const ContactSection: React.FC = () => {
                   href={contact.linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0077b5] hover:bg-[#005f93] text-white text-xs font-bold shadow-sm transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-tech-navy-200 dark:border-slate-700 text-tech-navy-800 dark:text-slate-200 hover:bg-tech-navy-50 dark:hover:bg-slate-800 text-xs font-bold transition-colors"
                 >
-                  <Linkedin className="w-3.5 h-3.5" />
+                  <Linkedin className="w-3.5 h-3.5 text-[#0077b5]" />
                   <span>{contact.connectLinkedInBtn}</span>
                 </a>
               </div>
             </div>
 
             {/* Location Card */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-2xl bg-tech-cyan-50 dark:bg-tech-cyan-950 text-tech-cyan-600 dark:text-tech-cyan-400 flex items-center justify-center shrink-0 border border-tech-cyan-200/60 dark:border-tech-cyan-800">
-                <MapPin className="w-5 h-5" />
-              </div>
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-tech-blue-600 dark:text-tech-blue-400 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-heading font-bold text-sm text-tech-navy-900 dark:text-white">
                   {contact.locationTitle}
@@ -166,23 +189,25 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Official CV Download Card */}
-            <div className="p-6 rounded-3xl bg-gradient-to-br from-tech-blue-600 to-tech-blue-800 text-white shadow-lg space-y-3">
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center">
-                  <FileDown className="w-5 h-5 text-white" />
-                </div>
+                <FileDown className="w-5 h-5 text-tech-blue-600 dark:text-tech-blue-400 shrink-0" />
                 <div>
-                  <h4 className="font-heading font-bold text-base">{contact.cvCardTitle}</h4>
-                  <span className="text-[11px] text-tech-blue-200 font-medium">{contact.cvFormatNote}</span>
+                  <h4 className="font-heading font-bold text-base text-tech-navy-900 dark:text-white">
+                    {contact.cvCardTitle}
+                  </h4>
+                  <span className="text-xs text-tech-navy-500 dark:text-slate-400 font-medium">
+                    {contact.cvFormatNote}
+                  </span>
                 </div>
               </div>
-              <p className="text-xs text-tech-blue-100 leading-relaxed">
+              <p className="text-xs text-tech-navy-600 dark:text-slate-400 leading-relaxed">
                 {contact.cvCardDesc}
               </p>
               <a
                 href={contact.cvPath}
-                download="CV_Muhammad_Juzairi_Safitli.pdf"
-                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-2xl bg-white text-tech-blue-700 hover:bg-tech-blue-50 text-xs font-extrabold shadow-md transition-all hover:scale-[1.02]"
+                download={contact.cvFileName}
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg border border-tech-blue-600 text-tech-blue-600 dark:text-tech-blue-400 hover:bg-tech-blue-50 dark:hover:bg-tech-blue-950/40 text-xs font-bold transition-colors"
               >
                 <FileDown className="w-4 h-4" />
                 <span>{contact.cvCardBtn}</span>
@@ -190,107 +215,93 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
+          {/* Right Column: Direct Message Composer */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm">
-              {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <h3 className="font-heading font-extrabold text-lg text-tech-navy-900 dark:text-white">
-                      {contact.formTitle}
-                    </h3>
-                    <p className="text-xs text-tech-navy-600 dark:text-slate-400 mt-0.5">
-                      {contact.formSubtitle}
-                    </p>
-                  </div>
+            <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-slate-900 border border-tech-navy-200/80 dark:border-slate-800 shadow-sm">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-heading font-extrabold text-lg text-tech-navy-900 dark:text-white">
+                    {contact.formTitle}
+                  </h3>
+                  <p className="text-xs text-tech-navy-600 dark:text-slate-400 mt-0.5">
+                    {contact.formSubtitle}
+                  </p>
+                </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
-                        {contact.nameLabel} <span className="text-rose-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder={contact.namePlaceholder}
-                        className="w-full px-4 py-2.5 rounded-2xl text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-all"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
-                        {contact.emailLabel} <span className="text-rose-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder={contact.emailPlaceholder}
-                        className="w-full px-4 py-2.5 rounded-2xl text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-all"
-                      />
-                    </div>
-                  </div>
-
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
-                      {contact.subjectLabel}
+                      {contact.nameLabel}
                     </label>
                     <input
                       type="text"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder={contact.subjectPlaceholder}
-                      className="w-full px-4 py-2.5 rounded-2xl text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-all"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder={contact.namePlaceholder}
+                      className="w-full px-4 py-2.5 rounded-lg text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
-                      {contact.messageLabel} <span className="text-rose-500">*</span>
+                      {contact.emailLabel}
                     </label>
-                    <textarea
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder={contact.messagePlaceholder}
-                      className="w-full px-4 py-2.5 rounded-2xl text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-all resize-none"
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder={contact.emailPlaceholder}
+                      className="w-full px-4 py-2.5 rounded-lg text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-colors"
                     />
                   </div>
-
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-gradient-to-r from-tech-blue-600 to-tech-blue-700 hover:from-tech-blue-700 hover:to-tech-blue-800 text-white text-xs font-extrabold shadow-md shadow-tech-blue-600/30 transition-all hover:scale-[1.01]"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>{contact.submitBtn}</span>
-                  </button>
-                </form>
-              ) : (
-                <div className="py-10 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h4 className="font-heading font-extrabold text-xl text-tech-navy-900 dark:text-white">
-                    {contact.successTitle}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-tech-navy-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                    {contact.successMessageTemplate(formData.name, formData.email)}
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: "", email: "", subject: "", message: "" });
-                    }}
-                    className="px-5 py-2.5 rounded-2xl bg-tech-blue-100 dark:bg-slate-800 text-tech-blue-700 dark:text-tech-blue-300 text-xs font-bold hover:bg-tech-blue-200 dark:hover:bg-slate-700 transition-colors"
-                  >
-                    {contact.sendAnotherBtn}
-                  </button>
                 </div>
-              )}
+
+                <div>
+                  <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
+                    {contact.subjectLabel}
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    placeholder={contact.subjectPlaceholder}
+                    className="w-full px-4 py-2.5 rounded-lg text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-tech-navy-700 dark:text-slate-300 mb-1.5">
+                    {contact.messageLabel}
+                  </label>
+                  <textarea
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder={contact.messagePlaceholder}
+                    className="w-full px-4 py-2.5 rounded-lg text-xs bg-tech-navy-50 dark:bg-slate-800 border border-tech-navy-200 dark:border-slate-700 text-tech-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-tech-blue-500 transition-colors resize-none"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <a
+                    href={getWhatsAppHref()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-tech-navy-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-tech-navy-50 dark:hover:bg-slate-700 text-tech-navy-800 dark:text-slate-100 text-xs font-bold transition-colors"
+                  >
+                    <MessageSquare className="w-4 h-4 text-emerald-600" />
+                    <span>{contact.sendViaWhatsAppBtn}</span>
+                  </a>
+
+                  <a
+                    href={getMailtoHref()}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-tech-blue-600 hover:bg-tech-blue-700 text-white text-xs font-bold shadow-sm transition-colors"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>{contact.sendViaEmailBtn}</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,4 +309,3 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
-

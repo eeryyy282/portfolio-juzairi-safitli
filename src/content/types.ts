@@ -34,8 +34,6 @@ export interface ProjectCaseStudy {
   challenges: string[];
   solutions: string[];
   impact: string;
-  githubUrl?: string;
-  liveUrl?: string;
 }
 
 export interface ProjectItem {
@@ -77,9 +75,11 @@ export interface PortfolioContent {
   };
   navbar: {
     brandName: string;
+    brandInitials: string;
     brandDegree: string;
     brandRole: string;
     downloadCvBtn: string;
+    toggleMenuAria: string;
     partnerTooltip: string;
     partnerUrl: string;
     navItems: NavItem[];
@@ -93,7 +93,6 @@ export interface PortfolioContent {
     badges: {
       cumlaude: string;
       distinction: string;
-      role: string;
     };
     downloadCvBtn: string;
     contactBtn: string;
@@ -131,9 +130,21 @@ export interface PortfolioContent {
     subtitle: string;
     categories: string[];
     caseStudyBtn: string;
-    sourceCodeBtn: string;
     viewGithubAria: string;
     viewLiveAria: string;
+    modal: {
+      role: string;
+      overview: string;
+      architecture: string;
+      challenges: string;
+      solutions: string;
+      impact: string;
+      techStack: string;
+      viewGithub: string;
+      liveDemo: string;
+      close: string;
+      closeAria: string;
+    };
     items: ProjectItem[];
   };
   skills: {
@@ -155,19 +166,24 @@ export interface PortfolioContent {
     phoneValue: string;
     chatWhatsAppBtn: string;
     whatsAppUrl: string;
+    whatsAppBaseUrl: string;
     linkedInTitle: string;
     linkedInValue: string;
     linkedInUrl: string;
     connectLinkedInBtn: string;
+    githubTitle: string;
+    githubUrl: string;
     locationTitle: string;
     locationValue: string;
     copyEmailTooltip: string;
     copiedEmailTooltip: string;
+    copyErrorTooltip: string;
     cvCardTitle: string;
     cvFormatNote: string;
     cvCardDesc: string;
     cvCardBtn: string;
     cvPath: string;
+    cvFileName: string;
     formTitle: string;
     formSubtitle: string;
     nameLabel: string;
@@ -178,11 +194,10 @@ export interface PortfolioContent {
     subjectPlaceholder: string;
     messageLabel: string;
     messagePlaceholder: string;
-    submitBtn: string;
-    successTitle: string;
-    successMessageTemplate: (name: string, email: string) => string;
-    sendAnotherBtn: string;
+    sendViaWhatsAppBtn: string;
+    sendViaEmailBtn: string;
     defaultSubject: string;
+    defaultMessageBody: string;
     mailtoBodyTemplate: (name: string, email: string, message: string) => string;
   };
   footer: {
@@ -207,6 +222,10 @@ export interface PortfolioContent {
     avatarBadgeBangkit: string;
     themeToggleLight: string;
     themeToggleDark: string;
+    themeToggleAria: string;
+    languageToggleTooltip: string;
+    switchToEnglishAria: string;
+    switchToIndonesianAria: string;
   };
 }
 

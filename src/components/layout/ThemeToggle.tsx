@@ -6,7 +6,7 @@ import { Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }) => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const { content } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
@@ -23,7 +23,7 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label="Toggle Dark / Light Theme"
+      aria-label={content.ui.themeToggleAria}
       className={`relative w-9 h-9 rounded-full flex items-center justify-center transition-colors bg-tech-navy-100/80 dark:bg-slate-800/80 text-tech-navy-700 dark:text-tech-blue-300 hover:bg-tech-navy-200 dark:hover:bg-slate-700 ${className}`}
       title={isDark ? content.ui.themeToggleLight : content.ui.themeToggleDark}
     >

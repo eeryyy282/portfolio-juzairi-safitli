@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FolderGit2, ExternalLink, Github, ArrowRight, Layers, Smartphone, Server, Sparkles } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { ProjectItem } from "@/content";
 import { MagicCard } from "@/components/ui/MagicCard";
@@ -29,10 +29,10 @@ export const ProjectsSection: React.FC = () => {
     <section id="projects" className="py-16 sm:py-24 bg-tech-navy-50/50 dark:bg-slate-900/40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-tech-blue-100 text-tech-blue-700 dark:bg-tech-blue-950 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800 tracking-wider">
+        <div className="text-center max-w-2xl mx-auto space-y-2 mb-10">
+          <p className="text-xs font-semibold text-tech-blue-600 dark:text-tech-blue-400">
             {projects.badge}
-          </span>
+          </p>
           <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-tech-navy-900 dark:text-white">
             {projects.title}
           </h2>
@@ -42,16 +42,16 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {projects.categories.map((cat, idx) => {
             const isSelected = selectedCategoryIndex === idx;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategoryIndex(idx)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-colors duration-200 ${
                   isSelected
-                    ? "bg-tech-blue-600 text-white shadow-md shadow-tech-blue-600/30 scale-105"
+                    ? "bg-tech-blue-600 text-white shadow-sm"
                     : "bg-white dark:bg-slate-900 text-tech-navy-700 dark:text-slate-300 hover:bg-tech-blue-50 dark:hover:bg-slate-800 border border-tech-navy-200/80 dark:border-slate-800"
                 }`}
               >
@@ -68,7 +68,7 @@ export const ProjectsSection: React.FC = () => {
               <div>
                 {/* Header info */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-tech-blue-50 dark:bg-tech-blue-950 text-tech-blue-700 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
+                  <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-tech-blue-50 dark:bg-tech-blue-950 text-tech-blue-700 dark:text-tech-blue-300 border border-tech-blue-200 dark:border-tech-blue-800">
                     {project.category}
                   </span>
                   <span className="text-xs text-tech-navy-500 dark:text-slate-400 font-medium">

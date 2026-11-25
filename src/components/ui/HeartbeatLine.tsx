@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Activity, Zap } from "lucide-react";
+import { Activity } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface HeartbeatLineProps {
@@ -37,14 +37,14 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
             strokeLinejoin="round"
           />
 
-          {/* Mirrored Active Tech Pulse Gradient */}
+          {/* Active Tech Pulse */}
           <path
             d="M0 40 H270 L282 40 L292 18 L304 62 L316 26 L326 48 L336 40 H464 L474 40 L484 18 L496 62 L508 26 L518 48 L528 40 H800"
             stroke="url(#techEkgGradient)"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="animate-pulse"
+            className="animate-ekg-flow"
           />
 
           <defs>
@@ -59,9 +59,9 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
         </svg>
 
         {withBadge && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-tech-blue-50/90 dark:bg-slate-900/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-tech-blue-200 dark:border-tech-blue-800 shadow-sm flex items-center gap-1.5 animate-heartbeat z-10">
+          <div className="absolute left-1/2 top-1/2 bg-white dark:bg-slate-900 px-3.5 py-1.5 rounded-lg border border-tech-blue-200 dark:border-tech-blue-800 shadow-sm flex items-center gap-1.5 animate-pulse-beat z-10">
             <Activity className="w-3.5 h-3.5 text-tech-blue-600 dark:text-tech-blue-400" />
-            <span className="text-[11px] font-bold text-tech-blue-700 dark:text-tech-blue-300 tracking-wider uppercase">
+            <span className="text-xs font-semibold text-tech-blue-700 dark:text-tech-blue-300">
               {ui.heartbeatBadge}
             </span>
           </div>

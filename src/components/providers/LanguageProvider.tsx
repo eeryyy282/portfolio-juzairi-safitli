@@ -21,10 +21,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    setMounted(true);
     // 1. Check if user already has an explicit preference in localStorage
     const savedLocale = localStorage.getItem("preferred_locale") as Locale | null;
     if (savedLocale === "en" || savedLocale === "id") {

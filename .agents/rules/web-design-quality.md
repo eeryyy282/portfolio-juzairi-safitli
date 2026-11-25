@@ -66,6 +66,12 @@ Every meaningful frontend surface should demonstrate at least four of these:
 
 Do not default to dark mode automatically. Choose the visual direction the product actually wants.
 
+## Portfolio Contextual Alignment, Motion & Anti-AI-Slop Guardrails
+
+- **Contextual Alignment:** Use centered framing where symmetry aids balance (e.g., mobile hero text above a stacked portrait, `explorePrompt` centered beneath `HeartbeatLine`, and centered section headers above symmetrical timelines or grids). Use left-alignment for dense body copy, asymmetric two-column splits, and all card/timeline internals for clean scanning.
+- **Lively yet Controlled Motion:** Support deliberate signature motifs (`CONNECTED PULSE` heartbeat `pulse-beat` + `ekg-flow`, and organic `BlobPhotoFrame` `blob-morph` contour) alongside subtle `transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md` card/button micro-interactions. Always include `@media (prefers-reduced-motion: reduce)` to disable keyframe animations, and avoid harsh `animate-bounce` or `animate-ping`.
+- **Anti-AI-Slop Guardrails:** Avoid purple gradients, gradient text (`bg-clip-text text-transparent`), heavy `blur-3xl`/`blur-2xl` neon glow blobs, pill badges stacked above every section heading, generic stat banners, decorative icon boxes around every icon, tiny ALL-CAPS labels (`10px–11px uppercase`), and emojis in navigation bars or hero badges. Stick to a 4-point spacing grid, clean `rounded-lg`/`rounded-xl` radii, and one primary solid-accent CTA per section.
+
 ## Component Checklist
 
 - [ ] Does it avoid looking like a default Tailwind or shadcn template?

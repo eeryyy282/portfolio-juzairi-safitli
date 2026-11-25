@@ -65,7 +65,7 @@ body {
   background: #38BDF8;
 }
 
-/* Morphing Blob Animation */
+/* Organic Blob Contour Motion */
 @keyframes blob-morph {
   0%, 100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -76,44 +76,69 @@ body {
 }
 
 .animate-blob {
-  animation: blob-morph 8s ease-in-out infinite;
+  animation: blob-morph 10s ease-in-out infinite;
 }
 
-/* Soft Floating Animation */
-@keyframes soft-float {
+/* Deliberate Heartbeat Pulse for Connected Pulse Motif */
+@keyframes pulse-beat {
   0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-soft-float {
-  animation: soft-float 4s ease-in-out infinite;
-}
-
-/* Heartbeat Micro-interaction */
-@keyframes heartbeat-pulse {
-  0%, 100% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   14% {
-    transform: scale(1.06);
+    transform: translate(-50%, -50%) scale(1.05);
   }
   28% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   42% {
-    transform: scale(1.08);
+    transform: translate(-50%, -50%) scale(1.07);
   }
   70% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
-.hover-heartbeat:hover {
-  animation: heartbeat-pulse 1.2s ease-in-out infinite;
+.animate-pulse-beat {
+  animation: pulse-beat 1.8s ease-in-out infinite;
+}
+
+/* Gentle EKG Line Breathing */
+@keyframes ekg-flow {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-ekg-flow {
+  animation: ekg-flow 2.4s ease-in-out infinite;
+}
+
+/* Smooth Section Entrance */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-pulse-beat,
+  .animate-ekg-flow,
+  .animate-fade-up {
+    animation: none;
+  }
 }
 
 /* Glassmorphism Classes */

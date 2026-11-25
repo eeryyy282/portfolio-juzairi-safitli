@@ -20,8 +20,8 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-tech-blue-600 to-tech-cyan-500 flex items-center justify-center text-white font-heading font-extrabold text-sm shadow-md">
-                MJS
+              <div className="w-9 h-9 rounded-lg bg-tech-blue-600 flex items-center justify-center text-white font-heading font-extrabold text-sm">
+                {navbar.brandInitials}
               </div>
               <div>
                 <h3 className="font-heading font-bold text-lg text-tech-navy-900 dark:text-white">
@@ -38,8 +38,8 @@ export const Footer: React.FC = () => {
 
             {/* Couple Theme Note */}
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-partner-pink-50/80 dark:bg-partner-pink-950/30 border border-partner-pink-200/60 dark:border-partner-pink-900/40 text-xs text-partner-pink-700 dark:text-partner-pink-300">
-                <Heart className="w-3.5 h-3.5 fill-partner-pink-500 text-partner-pink-500 shrink-0 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-partner-pink-50/80 dark:bg-partner-pink-950/30 border border-partner-pink-200/60 dark:border-partner-pink-900/40 text-xs text-partner-pink-700 dark:text-partner-pink-300">
+                <Heart className="w-3.5 h-3.5 fill-partner-pink-500 text-partner-pink-500 shrink-0" />
                 <span>
                   {footer.partnerNote}{" "}
                   <a
@@ -109,18 +109,18 @@ export const Footer: React.FC = () => {
                   href={contact.linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  title="LinkedIn"
+                  aria-label={contact.linkedInTitle}
+                  title={contact.linkedInTitle}
                   className="w-8 h-8 rounded-xl bg-tech-navy-100 dark:bg-slate-800 flex items-center justify-center text-tech-navy-700 dark:text-slate-300 hover:text-[#0077b5] dark:hover:text-[#0a66c2] hover:bg-sky-50 dark:hover:bg-slate-700 transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://github.com/eeryyy282"
+                  href={contact.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  title="GitHub"
+                  aria-label={contact.githubTitle}
+                  title={contact.githubTitle}
                   className="w-8 h-8 rounded-xl bg-tech-navy-100 dark:bg-slate-800 flex items-center justify-center text-tech-navy-700 dark:text-slate-300 hover:text-tech-blue-600 dark:hover:text-tech-blue-400 hover:bg-tech-blue-50 dark:hover:bg-slate-700 transition-colors"
                 >
                   <Github className="w-4 h-4" />
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
           <p>{footer.copyrightText}</p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tech-navy-100 dark:bg-slate-800 text-tech-navy-700 dark:text-slate-300 hover:bg-tech-navy-200 dark:hover:bg-slate-700 transition-colors font-medium"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-tech-navy-100 dark:bg-slate-800 text-tech-navy-700 dark:text-slate-300 hover:bg-tech-navy-200 dark:hover:bg-slate-700 transition-colors font-medium"
           >
             <span>{footer.backToTopBtn}</span>
             <ArrowUp className="w-3.5 h-3.5" />

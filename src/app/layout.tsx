@@ -21,7 +21,21 @@ const quicksand = Quicksand({
   weight: ["500", "600", "700"],
 });
 
-const siteUrl = "https://portfolio-juzairi-safitli.vercel.app";
+const getSiteUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    const url = process.env.NEXT_PUBLIC_SITE_URL;
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "https://portfolio-juzairi-safitli.vercel.app";
+};
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -39,7 +53,7 @@ export const metadata: Metadata = {
     siteName: siteContent.metadata.title,
     images: [
       {
-        url: "/images/profile.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -51,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteContent.metadata.title,
     description: siteContent.metadata.description,
-    images: ["/images/profile.jpg"],
+    images: ["/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
